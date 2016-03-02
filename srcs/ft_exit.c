@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ls.c                                            :+:      :+:    :+:   */
+/*   ft_exit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qdequele <qdequele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/02 15:21:13 by qdequele          #+#    #+#             */
-/*   Updated: 2016/03/02 18:22:05 by qdequele         ###   ########.fr       */
+/*   Created: 2016/03/02 16:58:55 by qdequele          #+#    #+#             */
+/*   Updated: 2016/03/02 17:25:26 by qdequele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-
-
-int     main(int ac, char **av)
+void    ft_not_found_exit(char *str)
 {
-    ft_ls(ac, av);
-    return 0;
+    ft_putstr("ls: ");
+    ft_putstr(str);
+    ft_putstr(": No such file or directory\n");
+    exit(0);
 }
 
-void    ft_ls(int ac, char **av)
+void    ft_illegal_option_exit(char *str)
 {
-    t_env   *env;
-
-    env = (t_env *)malloc(sizeof(t_env));
-    ft_parser(env, ac, av);
-    ft_debug_t_opt(env->opt);
-    //ft_debug_files(env->files[0]);
+    ft_putstr("ls: illegal option -- ");
+    ft_putstr(str);
+    ft_putstr("\nusage: ls [-ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1] [file ...]\n");
+    exit(0);
 }

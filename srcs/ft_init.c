@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ls.c                                            :+:      :+:    :+:   */
+/*   ft_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qdequele <qdequele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/02 15:21:13 by qdequele          #+#    #+#             */
-/*   Updated: 2016/03/02 18:22:05 by qdequele         ###   ########.fr       */
+/*   Created: 2016/03/02 17:33:38 by qdequele          #+#    #+#             */
+/*   Updated: 2016/03/02 18:19:30 by qdequele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-
-
-int     main(int ac, char **av)
+void    ft_init_env(t_env *env)
 {
-    ft_ls(ac, av);
-    return 0;
+    env = (t_env *)env;
 }
 
-void    ft_ls(int ac, char **av)
+void    ft_init_opt(t_env *env)
 {
-    t_env   *env;
-
-    env = (t_env *)malloc(sizeof(t_env));
-    ft_parser(env, ac, av);
-    ft_debug_t_opt(env->opt);
-    //ft_debug_files(env->files[0]);
+    env->opt.l = 0;
+    env->opt.R = 0;
+    env->opt.a = 0;
+    env->opt.r = 0;
+    env->opt.t = 0;
 }
