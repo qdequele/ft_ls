@@ -6,7 +6,7 @@
 /*   By: qdequele <qdequele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/02 17:31:57 by qdequele          #+#    #+#             */
-/*   Updated: 2016/03/02 18:15:38 by qdequele         ###   ########.fr       */
+/*   Updated: 2016/03/03 12:03:01 by qdequele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,20 @@ void    ft_parse_option(t_env *env, char *str)
     }
 }
 
+void    ft_parse_files(t_env *env, char *str)
+{
+    t_file  *n_file;
+
+    n_file = malloc(sizeof(t_file));
+    n_file->path = malloc(sizeof(char) * (ft_strlen(str) + 1));
+    n_file->path = str;
+    if (stat(str, n_file->stat) != 0)
+        n_file->err = ft_not_found_concat(str);
+    else
+        n_file->type = ft_get_type_of(n_file->stat);
+    ft_lstaddend(&(env->files), ft_lstnew(n_file), sizeof(t_file));
+}
+
 void    ft_parser(t_env *env, int ac, char **av)
 {
     int     i;
@@ -64,4 +78,14 @@ void    ft_parser(t_env *env, int ac, char **av)
             ft_parse_option(env, av[i]);
         i++;
     }
+}
+
+char    *ft_not_found_concat(char *str)
+{
+    char    *err;
+    err = malloc(sizeof(char) * (ft_strlen(str) + 32));
+    ft_strcat(err, "ls:");
+    ft_strcat(err, str);
+    ft_strcat(err, ": No such file or directory\n");
+    return (err);
 }

@@ -6,7 +6,7 @@
 /*   By: qdequele <qdequele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/02 15:21:17 by qdequele          #+#    #+#             */
-/*   Updated: 2016/03/02 18:20:07 by qdequele         ###   ########.fr       */
+/*   Updated: 2016/03/03 11:59:35 by qdequele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,15 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <unistd.h>
+# include <dirent.h>
 
 typedef struct      s_file
 {
     struct stat     *stat;
     char            *name;
     char            *path;
+    char            *err;
+    char            type;
 }                   t_file;
 
 typedef struct      s_opt
@@ -38,7 +41,7 @@ typedef struct      s_opt
 typedef struct      s_env
 {
     t_opt           opt;
-    t_file          *files;
+    t_list          *files;
 }                   t_env;
 
 //ft_exit.c
