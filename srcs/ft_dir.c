@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_util.c                                          :+:      :+:    :+:   */
+/*   ft_dir.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qdequele <qdequele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/03 12:03:29 by qdequele          #+#    #+#             */
-/*   Updated: 2016/03/03 12:09:20 by qdequele         ###   ########.fr       */
+/*   Created: 2016/03/02 16:58:55 by qdequele          #+#    #+#             */
+/*   Updated: 2016/03/02 17:25:26 by qdequele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-char    ft_get_type_of(struct stat stat)
+void	ft_open_dir(t_env *env, t_elem *elem)
 {
-    if (S_ISBLK(stat.st_mode) == 1)
-        return ('b');
-    if (S_ISCHR(stat.st_mode) == 1)
-        return ('c');
-    if (S_ISDIR(stat.st_mode) == 1)
-        return ('d');
-    if (S_ISFIFO(stat.st_mode) == 1)
-        return ('f');
-    if (S_ISREG(stat.st_mode) == 1)
-        return ('-');
-    if (S_ISLNK(stat.st_mode) == 1)
-        return ('l');
+	struct dirent *pDirent;
+    DIR *pDir;
+
+    env = (t_env*)env;
+    pDir = opendir (elem->path);
+    if (pDir == NULL) {
+        ft_not_found_exit(elem->path);
+    }
+
+    while ((pDirent = readdir(pDir)) != NULL) {
+        printf ("[%s]\n", pDirent->d_name);
+    }
+    closedir (pDir);
 }

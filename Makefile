@@ -6,13 +6,13 @@
 #    By: qdequele <qdequele@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/15 14:57:05 by qdequele          #+#    #+#              #
-#    Updated: 2016/03/02 17:38:59 by qdequele         ###   ########.fr        #
+#    Updated: 2016/03/03 13:07:29 by qdequele         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #Define the program
 NAME		= ft_ls
-_SRC		= ft_exit.c ft_init.c ft_ls.c ft_parser.c ft_show.c
+_SRC		= ft_dir.c ft_elem.c ft_exit.c ft_init.c ft_ls.c ft_parser.c ft_show.c ft_utils.c
 SRC			= $(addprefix srcs/,$(_SRC))
 CFLAGS		= -Wall -Wextra -Werror
 LIBFT		= -Llibft -lft -Ilibft

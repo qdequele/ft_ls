@@ -6,34 +6,46 @@
 /*   By: qdequele <qdequele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/02 17:27:16 by qdequele          #+#    #+#             */
-/*   Updated: 2016/03/02 18:21:32 by qdequele         ###   ########.fr       */
+/*   Updated: 2016/03/03 13:57:12 by qdequele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void    ft_debug_t_opt(t_opt opt)
+void	ft_debug_t_opt(t_opt opt)
 {
-    ft_putstr("\n#######ft_debug_t_opt########\n");
-    ft_putstr("options passed : ");
-    if (opt.l == 1)
-        ft_putchar('l');
-    if (opt.R == 1)
-        ft_putchar('R');
-    if (opt.a == 1)
-        ft_putchar('a');
-    if (opt.r == 1)
-        ft_putchar('r');
-    if (opt.t == 1)
-        ft_putchar('t');
-    ft_putstr("\n#######END########\n");
+	ft_putstr("\n#######ft_debug_t_opt########\n");
+	ft_putstr("options passed : ");
+	if (opt.l == 1)
+		ft_putchar('l');
+	if (opt.R == 1)
+		ft_putchar('R');
+	if (opt.a == 1)
+		ft_putchar('a');
+	if (opt.r == 1)
+		ft_putchar('r');
+	if (opt.t == 1)
+		ft_putchar('t');
+	ft_putstr("\n#######END########\n");
 }
-void    ft_debug_files(t_file file)
+
+void	ft_debug_elems(t_elem *elem)
 {
-    ft_putstr("\n#######ft_debug_files########\n");
-    ft_putstr("file->name : ");
-    ft_putstr(file.name);
-    ft_putstr("file->path : ");
-    ft_putstr(file.path);
-    ft_putstr("\n#######END########\n");
+	ft_putstr("\n#######ft_debug_elems########");
+	ft_putstr("\nelem->path : ");
+	if (elem->path)
+		ft_putstr(elem->path);
+	ft_putstr("\nelem->err : ");
+	if (elem->err) 
+		ft_putstr(elem->err);
+	ft_putstr("\nelem->type : ");
+	ft_putchar(elem->type);
+	ft_putstr("\n#######END########\n");
+}
+
+void	ft_debug_lst(t_list *elem)
+{
+	ft_putnbr(sizeof(elem));
+	ft_putstr(" : taille \n");
+	//ft_debug_elems((elem->content));
 }

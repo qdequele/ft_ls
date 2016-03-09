@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_exit.c                                          :+:      :+:    :+:   */
+/*   ft_elem.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qdequele <qdequele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,24 +12,41 @@
 
 #include "ft_ls.h"
 
-void	ft_not_found_exit(char *str)
+void	ft_push_elem(t_env *env, t_elem *elem)
 {
-	ft_putstr("ls: ");
-	ft_putstr(str);
-	ft_putstr(": No such file or directory\n");
-	exit(0);
+	t_elem	*tmp_elem;
+	tmp_elem = env->elems;
+
+	if (!elem)
+		return ;
+	if (env->elems == NULL)
+	{
+		env->elems = elem;
+	}
+	else
+	{
+		while (tmp_elem->next)
+		{
+			tmp_elem = tmp_elem->next;
+		}
+		tmp_elem->next = elem;
+	}
 }
 
-void	ft_illegal_option_exit(char *str)
+void	ft_elem_for_each(t_env *env, void (*function)(t_elem *elem))
 {
-	ft_putstr("ls: illegal option -- ");
-	ft_putstr(str);
-	ft_putstr("\nusage: ls [-ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1] [file ...]\n");
-	exit(0);
-}
+	t_elem	*tmp_elem;
+	tmp_elem = env->elems;
 
-void	ft_memory_error()
-{
-	ft_putstr("error : memory cannot be allocated\n");
-	exit(0);
+	if (!tmp_elem)
+		return ;
+	else
+	{
+		while (tmp_elem->next)
+		{
+			function(tmp_elem);
+			tmp_elem = tmp_elem->next;
+		}
+		function(tmp_elem);
+	}
 }
