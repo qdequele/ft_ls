@@ -29,7 +29,7 @@ void	ft_parser(t_env *env, int ac, char **av)
 		i++;
 	}
 	if (!av[i])
-		ft_parse_elems(env, "./");
+		ft_parse_elems(env, ".");
 	while (i < ac && av[i])
 	{
 		ft_parse_elems(env, av[i]);
@@ -64,18 +64,7 @@ void	ft_parse_option(t_env *env, char *str)
 
 void	ft_parse_elems(t_env *env, char *str)
 {
-	t_elem	*n_elem;
-
-	if (!(n_elem = malloc(sizeof(t_elem))))
-		ft_memory_error();
-	if (!(n_elem->path = malloc(sizeof(char) * (ft_strlen(str) + 1))))
-		ft_memory_error();
-	n_elem->path = str;
-	n_elem->path[ft_strlen(str)] = '\0';
-	n_elem->next = NULL;
-	if (lstat(str, &n_elem->stat) == -1)
-		n_elem->err = ft_not_found_concat(str);
-	else
-		n_elem->type = ft_get_type_of(n_elem->stat);
-	ft_push_elem(env, n_elem);
+	printf("test1\n");
+	ft_push_elem(env, ft_create_elem(str));
+	printf("test2\n");
 }

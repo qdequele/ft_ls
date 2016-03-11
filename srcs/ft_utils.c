@@ -15,40 +15,19 @@
 char	ft_get_type_of(struct stat stat)
 {
 	if (S_ISBLK(stat.st_mode) == 1)
-	{
-		ft_putstr("type : b\n");
 		return ('b');
-	}
 	if (S_ISCHR(stat.st_mode) == 1)
-	{
-		ft_putstr("type : c\n");
 		return ('c');
-	}
 	if (S_ISDIR(stat.st_mode) == 1)
-	{
-		ft_putstr("type : d\n");
 		return ('d');
-	}
 	if (S_ISFIFO(stat.st_mode) == 1)
-	{
-		ft_putstr("type : f\n");
 		return ('f');
-	}
 	if (S_ISREG(stat.st_mode) == 1)
-	{
-		ft_putstr("type : -\n");
 		return ('-');
-	}
 	if (S_ISLNK(stat.st_mode) == 1)
-	{
-		ft_putstr("type : l\n");
 		return ('l');
-	}
 	else
-	{
-		ft_putstr("type : e\n");
 		return ('e');
-	}
 }
 
 char	*ft_not_found_concat(char *str)

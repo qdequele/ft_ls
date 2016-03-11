@@ -12,13 +12,6 @@
 
 #include "ft_ls.h"
 
-void	ft_init_env(t_env *env)
-{
-	if (!(env = (t_env *)malloc(sizeof(t_env))))
-		ft_memory_error();
-	env->elems = NULL;
-}
-
 void	ft_init_opt(t_env *env)
 {
 	env->opt.l = 0;

@@ -20,10 +20,13 @@ int		main(int ac, char **av)
 
 void	ft_ls(int ac, char **av)
 {
-	t_env	env;
+	t_env	*env;
 
-	ft_init_env(&env);
-	ft_parser(&env, ac, av);
-	ft_debug_t_opt(env.opt);
-	ft_elem_for_each(&env, ft_debug_elems);
+	if (!(env = (t_env *)malloc(sizeof(t_env))))
+		ft_memory_error();
+	env->elems = NULL;
+	ft_parser(env, ac, av);
+	ft_debug_t_opt(env->opt);
+	//ft_elem_for_each(env, ft_debug_elems);
+	ft_elem_for_each(env, ft_open_dir);
 }

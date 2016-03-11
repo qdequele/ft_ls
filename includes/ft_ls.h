@@ -47,16 +47,16 @@ typedef struct		s_env
 }					t_env;
 
 //ft_dir.c
-void				ft_open_dir(t_env *env, t_elem *elem);
+void				ft_open_dir(t_elem *elem);
 //ft_elem.c
-void				ft_push_elem(t_env *env, t_elem *elem);
-void				ft_elem_for_each(t_env *env, void (*function)(t_elem *elem));
+t_elem				*ft_create_elem(char *str);
+void				ft_push_elem(t_env *env, t_elem *new_elem);
+void				ft_elem_for_each(t_env *env, void (*f)(t_elem *elem));
 //ft_exit.c
 void				ft_not_found_exit(char *str);
 void				ft_illegal_option_exit(char *str);
 void				ft_memory_error();
 //ft_init.c
-void				ft_init_env(t_env *env);
 void				ft_init_opt(t_env *env);
 //ft_ls.c
 void				ft_ls(int ac, char **av);
