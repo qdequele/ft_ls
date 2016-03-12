@@ -1,1845 +1,209 @@
-
-#######ft_debug_t_opt########
-options passed : 
-#######END########
-
-#######ft_debug_elems########
-elem->name : .
-elem->path : .
-elem->err : 
-elem->type : d
-#######END########
-
-.:
-
-#######ft_debug_elems########
-elem->name : libft
-elem->path : libft
-elem->err : 
-elem->type : d
-#######END########
-
-libft:
-
-#######ft_debug_elems########
-elem->name : ft_matrix
-elem->path : libft/ft_matrix
-elem->err : 
-elem->type : d
-#######END########
-
-libft/ft_matrix:
-
-#######ft_debug_elems########
-elem->name : ft_matrix_create.c
-elem->path : libft/ft_matrix/ft_matrix_create.c
-elem->err : 
-elem->type : -
-#######END########
-ft_matrix_create.c
-
-#######ft_debug_elems########
-elem->name : ft_print
-elem->path : libft/ft_print
-elem->err : 
-elem->type : d
-#######END########
-
-libft/ft_print:
-
-#######ft_debug_elems########
-elem->name : ft_putstr_fd.c
-elem->path : libft/ft_print/ft_putstr_fd.c
-elem->err : 
-elem->type : -
-#######END########
-ft_putstr_fd.c
-
-#######ft_debug_elems########
-elem->name : ft_putnbr.c
-elem->path : libft/ft_print/ft_putnbr.c
-elem->err : 
-elem->type : -
-#######END########
-ft_putnbr.c
-
-#######ft_debug_elems########
-elem->name : ft_putnbr_fd.c
-elem->path : libft/ft_print/ft_putnbr_fd.c
-elem->err : 
-elem->type : -
-#######END########
-ft_putnbr_fd.c
-
-#######ft_debug_elems########
-elem->name : ft_putstr.c
-elem->path : libft/ft_print/ft_putstr.c
-elem->err : 
-elem->type : -
-#######END########
-ft_putstr.c
-
-#######ft_debug_elems########
-elem->name : ft_putchar.c
-elem->path : libft/ft_print/ft_putchar.c
-elem->err : 
-elem->type : -
-#######END########
-ft_putchar.c
-
-#######ft_debug_elems########
-elem->name : ft_puttab.c
-elem->path : libft/ft_print/ft_puttab.c
-elem->err : 
-elem->type : -
-#######END########
-ft_puttab.c
-
-#######ft_debug_elems########
-elem->name : ft_putchar_fd.c
-elem->path : libft/ft_print/ft_putchar_fd.c
-elem->err : 
-elem->type : -
-#######END########
-ft_putchar_fd.c
-
-#######ft_debug_elems########
-elem->name : ft_putendl_fd.c
-elem->path : libft/ft_print/ft_putendl_fd.c
-elem->err : 
-elem->type : -
-#######END########
-ft_putendl_fd.c
-
-#######ft_debug_elems########
-elem->name : ft_putendl.c
-elem->path : libft/ft_print/ft_putendl.c
-elem->err : 
-elem->type : -
-#######END########
-ft_putendl.c
-
-#######ft_debug_elems########
-elem->name : ft_lst
-elem->path : libft/ft_lst
-elem->err : 
-elem->type : d
-#######END########
-
-libft/ft_lst:
-
-#######ft_debug_elems########
-elem->name : ft_lstaddend.c
-elem->path : libft/ft_lst/ft_lstaddend.c
-elem->err : 
-elem->type : -
-#######END########
-ft_lstaddend.c
-
-#######ft_debug_elems########
-elem->name : ft_lstadd.c
-elem->path : libft/ft_lst/ft_lstadd.c
-elem->err : 
-elem->type : -
-#######END########
-ft_lstadd.c
-
-#######ft_debug_elems########
-elem->name : ft_lstiter.c
-elem->path : libft/ft_lst/ft_lstiter.c
-elem->err : 
-elem->type : -
-#######END########
-ft_lstiter.c
-
-#######ft_debug_elems########
-elem->name : ft_lstdelone.c
-elem->path : libft/ft_lst/ft_lstdelone.c
-elem->err : 
-elem->type : -
-#######END########
-ft_lstdelone.c
-
-#######ft_debug_elems########
-elem->name : ft_lstmap.c
-elem->path : libft/ft_lst/ft_lstmap.c
-elem->err : 
-elem->type : -
-#######END########
-ft_lstmap.c
-
-#######ft_debug_elems########
-elem->name : ft_lstnew.c
-elem->path : libft/ft_lst/ft_lstnew.c
-elem->err : 
-elem->type : -
-#######END########
-ft_lstnew.c
-
-#######ft_debug_elems########
-elem->name : ft_lstdel.c
-elem->path : libft/ft_lst/ft_lstdel.c
-elem->err : 
-elem->type : -
-#######END########
-ft_lstdel.c
-
-#######ft_debug_elems########
-elem->name : ft_str
-elem->path : libft/ft_str
-elem->err : 
-elem->type : d
-#######END########
-
-libft/ft_str:
-
-#######ft_debug_elems########
-elem->name : ft_striteri.c
-elem->path : libft/ft_str/ft_striteri.c
-elem->err : 
-elem->type : -
-#######END########
-ft_striteri.c
-
-#######ft_debug_elems########
-elem->name : ft_strstr.c
-elem->path : libft/ft_str/ft_strstr.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strstr.c
-
-#######ft_debug_elems########
-elem->name : ft_strcpy.c
-elem->path : libft/ft_str/ft_strcpy.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strcpy.c
-
-#######ft_debug_elems########
-elem->name : ft_strncat.c
-elem->path : libft/ft_str/ft_strncat.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strncat.c
-
-#######ft_debug_elems########
-elem->name : ft_strncmp.c
-elem->path : libft/ft_str/ft_strncmp.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strncmp.c
-
-#######ft_debug_elems########
-elem->name : ft_strchr.c
-elem->path : libft/ft_str/ft_strchr.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strchr.c
-
-#######ft_debug_elems########
-elem->name : ft_strtrim.c
-elem->path : libft/ft_str/ft_strtrim.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strtrim.c
-
-#######ft_debug_elems########
-elem->name : ft_strsplit.c
-elem->path : libft/ft_str/ft_strsplit.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strsplit.c
-
-#######ft_debug_elems########
-elem->name : ft_strdel.c
-elem->path : libft/ft_str/ft_strdel.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strdel.c
-
-#######ft_debug_elems########
-elem->name : ft_strnew.c
-elem->path : libft/ft_str/ft_strnew.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strnew.c
-
-#######ft_debug_elems########
-elem->name : ft_strcut.c
-elem->path : libft/ft_str/ft_strcut.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strcut.c
-
-#######ft_debug_elems########
-elem->name : ft_strequ.c
-elem->path : libft/ft_str/ft_strequ.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strequ.c
-
-#######ft_debug_elems########
-elem->name : ft_strnstr.c
-elem->path : libft/ft_str/ft_strnstr.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strnstr.c
-
-#######ft_debug_elems########
-elem->name : ft_strsub.c
-elem->path : libft/ft_str/ft_strsub.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strsub.c
-
-#######ft_debug_elems########
-elem->name : ft_strrchr.c
-elem->path : libft/ft_str/ft_strrchr.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strrchr.c
-
-#######ft_debug_elems########
-elem->name : ft_strmapi.c
-elem->path : libft/ft_str/ft_strmapi.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strmapi.c
-
-#######ft_debug_elems########
-elem->name : ft_strjoin.c
-elem->path : libft/ft_str/ft_strjoin.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strjoin.c
-
-#######ft_debug_elems########
-elem->name : ft_strlen.c
-elem->path : libft/ft_str/ft_strlen.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strlen.c
-
-#######ft_debug_elems########
-elem->name : ft_strmap.c
-elem->path : libft/ft_str/ft_strmap.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strmap.c
-
-#######ft_debug_elems########
-elem->name : ft_strrev.c
-elem->path : libft/ft_str/ft_strrev.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strrev.c
-
-#######ft_debug_elems########
-elem->name : ft_strclr.c
-elem->path : libft/ft_str/ft_strclr.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strclr.c
-
-#######ft_debug_elems########
-elem->name : ft_striter.c
-elem->path : libft/ft_str/ft_striter.c
-elem->err : 
-elem->type : -
-#######END########
-ft_striter.c
-
-#######ft_debug_elems########
-elem->name : ft_strncpy.c
-elem->path : libft/ft_str/ft_strncpy.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strncpy.c
-
-#######ft_debug_elems########
-elem->name : ft_strcat.c
-elem->path : libft/ft_str/ft_strcat.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strcat.c
-
-#######ft_debug_elems########
-elem->name : ft_strnequ.c
-elem->path : libft/ft_str/ft_strnequ.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strnequ.c
-
-#######ft_debug_elems########
-elem->name : ft_strcmp.c
-elem->path : libft/ft_str/ft_strcmp.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strcmp.c
-
-#######ft_debug_elems########
-elem->name : ft_strfjoin.c
-elem->path : libft/ft_str/ft_strfjoin.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strfjoin.c
-
-#######ft_debug_elems########
-elem->name : ft_strdup.c
-elem->path : libft/ft_str/ft_strdup.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strdup.c
-
-#######ft_debug_elems########
-elem->name : ft_strlcat.c
-elem->path : libft/ft_str/ft_strlcat.c
-elem->err : 
-elem->type : -
-#######END########
-ft_strlcat.c
-
-#######ft_debug_elems########
-elem->name : bin
-elem->path : libft/bin
-elem->err : 
-elem->type : d
-#######END########
-
-libft/bin:
-
-#######ft_debug_elems########
-elem->name : ft_count_column_array.o
-elem->path : libft/bin/ft_count_column_array.o
-elem->err : 
-elem->type : -
-#######END########
-ft_count_column_array.o
-
-#######ft_debug_elems########
-elem->name : ft_wordlen.o
-elem->path : libft/bin/ft_wordlen.o
-elem->err : 
-elem->type : -
-#######END########
-ft_wordlen.o
-
-#######ft_debug_elems########
-elem->name : ft_lstaddend.o
-elem->path : libft/bin/ft_lstaddend.o
-elem->err : 
-elem->type : -
-#######END########
-ft_lstaddend.o
-
-#######ft_debug_elems########
-elem->name : ft_matrix_create.o
-elem->path : libft/bin/ft_matrix_create.o
-elem->err : 
-elem->type : -
-#######END########
-ft_matrix_create.o
-
-#######ft_debug_elems########
-elem->name : ft_putendl_fd.o
-elem->path : libft/bin/ft_putendl_fd.o
-elem->err : 
-elem->type : -
-#######END########
-ft_putendl_fd.o
-
-#######ft_debug_elems########
-elem->name : ft_lstdelone.o
-elem->path : libft/bin/ft_lstdelone.o
-elem->err : 
-elem->type : -
-#######END########
-ft_lstdelone.o
-
-#######ft_debug_elems########
-elem->name : ft_lstiter.o
-elem->path : libft/bin/ft_lstiter.o
-elem->err : 
-elem->type : -
-#######END########
-ft_lstiter.o
-
-#######ft_debug_elems########
-elem->name : ft_strcut.o
-elem->path : libft/bin/ft_strcut.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strcut.o
-
-#######ft_debug_elems########
-elem->name : ft_strnew.o
-elem->path : libft/bin/ft_strnew.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strnew.o
-
-#######ft_debug_elems########
-elem->name : ft_memchr.o
-elem->path : libft/bin/ft_memchr.o
-elem->err : 
-elem->type : -
-#######END########
-ft_memchr.o
-
-#######ft_debug_elems########
-elem->name : ft_strmapi.o
-elem->path : libft/bin/ft_strmapi.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strmapi.o
-
-#######ft_debug_elems########
-elem->name : ft_strlen.o
-elem->path : libft/bin/ft_strlen.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strlen.o
-
-#######ft_debug_elems########
-elem->name : ft_putstr_fd.o
-elem->path : libft/bin/ft_putstr_fd.o
-elem->err : 
-elem->type : -
-#######END########
-ft_putstr_fd.o
-
-#######ft_debug_elems########
-elem->name : ft_lstnew.o
-elem->path : libft/bin/ft_lstnew.o
-elem->err : 
-elem->type : -
-#######END########
-ft_lstnew.o
-
-#######ft_debug_elems########
-elem->name : ft_lstadd.o
-elem->path : libft/bin/ft_lstadd.o
-elem->err : 
-elem->type : -
-#######END########
-ft_lstadd.o
-
-#######ft_debug_elems########
-elem->name : ft_isdigit.o
-elem->path : libft/bin/ft_isdigit.o
-elem->err : 
-elem->type : -
-#######END########
-ft_isdigit.o
-
-#######ft_debug_elems########
-elem->name : ft_memccpy.o
-elem->path : libft/bin/ft_memccpy.o
-elem->err : 
-elem->type : -
-#######END########
-ft_memccpy.o
-
-#######ft_debug_elems########
-elem->name : ft_putendl.o
-elem->path : libft/bin/ft_putendl.o
-elem->err : 
-elem->type : -
-#######END########
-ft_putendl.o
-
-#######ft_debug_elems########
-elem->name : ft_strlcat.o
-elem->path : libft/bin/ft_strlcat.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strlcat.o
-
-#######ft_debug_elems########
-elem->name : ft_islower.o
-elem->path : libft/bin/ft_islower.o
-elem->err : 
-elem->type : -
-#######END########
-ft_islower.o
-
-#######ft_debug_elems########
-elem->name : ft_memdel.o
-elem->path : libft/bin/ft_memdel.o
-elem->err : 
-elem->type : -
-#######END########
-ft_memdel.o
-
-#######ft_debug_elems########
-elem->name : ft_strclr.o
-elem->path : libft/bin/ft_strclr.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strclr.o
-
-#######ft_debug_elems########
-elem->name : ft_strchr.o
-elem->path : libft/bin/ft_strchr.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strchr.o
-
-#######ft_debug_elems########
-elem->name : ft_memset.o
-elem->path : libft/bin/ft_memset.o
-elem->err : 
-elem->type : -
-#######END########
-ft_memset.o
-
-#######ft_debug_elems########
-elem->name : ft_free_array.o
-elem->path : libft/bin/ft_free_array.o
-elem->err : 
-elem->type : -
-#######END########
-ft_free_array.o
-
-#######ft_debug_elems########
-elem->name : ft_putstr.o
-elem->path : libft/bin/ft_putstr.o
-elem->err : 
-elem->type : -
-#######END########
-ft_putstr.o
-
-#######ft_debug_elems########
-elem->name : ft_strsub.o
-elem->path : libft/bin/ft_strsub.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strsub.o
-
-#######ft_debug_elems########
-elem->name : ft_itoa.o
-elem->path : libft/bin/ft_itoa.o
-elem->err : 
-elem->type : -
-#######END########
-ft_itoa.o
-
-#######ft_debug_elems########
-elem->name : ft_strfjoin.o
-elem->path : libft/bin/ft_strfjoin.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strfjoin.o
-
-#######ft_debug_elems########
-elem->name : ft_wordcount.o
-elem->path : libft/bin/ft_wordcount.o
-elem->err : 
-elem->type : -
-#######END########
-ft_wordcount.o
-
-#######ft_debug_elems########
-elem->name : ft_striter.o
-elem->path : libft/bin/ft_striter.o
-elem->err : 
-elem->type : -
-#######END########
-ft_striter.o
-
-#######ft_debug_elems########
-elem->name : ft_strequ.o
-elem->path : libft/bin/ft_strequ.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strequ.o
-
-#######ft_debug_elems########
-elem->name : ft_memalloc.o
-elem->path : libft/bin/ft_memalloc.o
-elem->err : 
-elem->type : -
-#######END########
-ft_memalloc.o
-
-#######ft_debug_elems########
-elem->name : ft_isascii.o
-elem->path : libft/bin/ft_isascii.o
-elem->err : 
-elem->type : -
-#######END########
-ft_isascii.o
-
-#######ft_debug_elems########
-elem->name : ft_putnbr_fd.o
-elem->path : libft/bin/ft_putnbr_fd.o
-elem->err : 
-elem->type : -
-#######END########
-ft_putnbr_fd.o
-
-#######ft_debug_elems########
-elem->name : ft_strjoin.o
-elem->path : libft/bin/ft_strjoin.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strjoin.o
-
-#######ft_debug_elems########
-elem->name : ft_strtrim.o
-elem->path : libft/bin/ft_strtrim.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strtrim.o
-
-#######ft_debug_elems########
-elem->name : ft_putchar_fd.o
-elem->path : libft/bin/ft_putchar_fd.o
-elem->err : 
-elem->type : -
-#######END########
-ft_putchar_fd.o
-
-#######ft_debug_elems########
-elem->name : ft_itoa_base.o
-elem->path : libft/bin/ft_itoa_base.o
-elem->err : 
-elem->type : -
-#######END########
-ft_itoa_base.o
-
-#######ft_debug_elems########
-elem->name : ft_lstdel.o
-elem->path : libft/bin/ft_lstdel.o
-elem->err : 
-elem->type : -
-#######END########
-ft_lstdel.o
-
-#######ft_debug_elems########
-elem->name : ft_get_next_line.o
-elem->path : libft/bin/ft_get_next_line.o
-elem->err : 
-elem->type : -
-#######END########
-ft_get_next_line.o
-
-#######ft_debug_elems########
-elem->name : ft_nbrlen.o
-elem->path : libft/bin/ft_nbrlen.o
-elem->err : 
-elem->type : -
-#######END########
-ft_nbrlen.o
-
-#######ft_debug_elems########
-elem->name : ft_memcpy.o
-elem->path : libft/bin/ft_memcpy.o
-elem->err : 
-elem->type : -
-#######END########
-ft_memcpy.o
-
-#######ft_debug_elems########
-elem->name : ft_strcat.o
-elem->path : libft/bin/ft_strcat.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strcat.o
-
-#######ft_debug_elems########
-elem->name : ft_atoi.o
-elem->path : libft/bin/ft_atoi.o
-elem->err : 
-elem->type : -
-#######END########
-ft_atoi.o
-
-#######ft_debug_elems########
-elem->name : ft_lstmap.o
-elem->path : libft/bin/ft_lstmap.o
-elem->err : 
-elem->type : -
-#######END########
-ft_lstmap.o
-
-#######ft_debug_elems########
-elem->name : ft_nbrlen_base.o
-elem->path : libft/bin/ft_nbrlen_base.o
-elem->err : 
-elem->type : -
-#######END########
-ft_nbrlen_base.o
-
-#######ft_debug_elems########
-elem->name : ft_strdup.o
-elem->path : libft/bin/ft_strdup.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strdup.o
-
-#######ft_debug_elems########
-elem->name : ft_puttab.o
-elem->path : libft/bin/ft_puttab.o
-elem->err : 
-elem->type : -
-#######END########
-ft_puttab.o
-
-#######ft_debug_elems########
-elem->name : ft_memmove.o
-elem->path : libft/bin/ft_memmove.o
-elem->err : 
-elem->type : -
-#######END########
-ft_memmove.o
-
-#######ft_debug_elems########
-elem->name : ft_strdel.o
-elem->path : libft/bin/ft_strdel.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strdel.o
-
-#######ft_debug_elems########
-elem->name : ft_isupper.o
-elem->path : libft/bin/ft_isupper.o
-elem->err : 
-elem->type : -
-#######END########
-ft_isupper.o
-
-#######ft_debug_elems########
-elem->name : ft_strcpy.o
-elem->path : libft/bin/ft_strcpy.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strcpy.o
-
-#######ft_debug_elems########
-elem->name : ft_strcmp.o
-elem->path : libft/bin/ft_strcmp.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strcmp.o
-
-#######ft_debug_elems########
-elem->name : ft_tolower.o
-elem->path : libft/bin/ft_tolower.o
-elem->err : 
-elem->type : -
-#######END########
-ft_tolower.o
-
-#######ft_debug_elems########
-elem->name : ft_bzero.o
-elem->path : libft/bin/ft_bzero.o
-elem->err : 
-elem->type : -
-#######END########
-ft_bzero.o
-
-#######ft_debug_elems########
-elem->name : ft_strncpy.o
-elem->path : libft/bin/ft_strncpy.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strncpy.o
-
-#######ft_debug_elems########
-elem->name : ft_strmap.o
-elem->path : libft/bin/ft_strmap.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strmap.o
-
-#######ft_debug_elems########
-elem->name : ft_colors.o
-elem->path : libft/bin/ft_colors.o
-elem->err : 
-elem->type : -
-#######END########
-ft_colors.o
-
-#######ft_debug_elems########
-elem->name : ft_strrev.o
-elem->path : libft/bin/ft_strrev.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strrev.o
-
-#######ft_debug_elems########
-elem->name : ft_isprint.o
-elem->path : libft/bin/ft_isprint.o
-elem->err : 
-elem->type : -
-#######END########
-ft_isprint.o
-
-#######ft_debug_elems########
-elem->name : ft_striteri.o
-elem->path : libft/bin/ft_striteri.o
-elem->err : 
-elem->type : -
-#######END########
-ft_striteri.o
-
-#######ft_debug_elems########
-elem->name : ft_count_raw_array.o
-elem->path : libft/bin/ft_count_raw_array.o
-elem->err : 
-elem->type : -
-#######END########
-ft_count_raw_array.o
-
-#######ft_debug_elems########
-elem->name : ft_strnequ.o
-elem->path : libft/bin/ft_strnequ.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strnequ.o
-
-#######ft_debug_elems########
-elem->name : ft_strstr.o
-elem->path : libft/bin/ft_strstr.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strstr.o
-
-#######ft_debug_elems########
-elem->name : ft_putnbr.o
-elem->path : libft/bin/ft_putnbr.o
-elem->err : 
-elem->type : -
-#######END########
-ft_putnbr.o
-
-#######ft_debug_elems########
-elem->name : ft_strncat.o
-elem->path : libft/bin/ft_strncat.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strncat.o
-
-#######ft_debug_elems########
-elem->name : ft_memcmp.o
-elem->path : libft/bin/ft_memcmp.o
-elem->err : 
-elem->type : -
-#######END########
-ft_memcmp.o
-
-#######ft_debug_elems########
-elem->name : ft_strncmp.o
-elem->path : libft/bin/ft_strncmp.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strncmp.o
-
-#######ft_debug_elems########
-elem->name : ft_isalpha.o
-elem->path : libft/bin/ft_isalpha.o
-elem->err : 
-elem->type : -
-#######END########
-ft_isalpha.o
-
-#######ft_debug_elems########
-elem->name : ft_isalnum.o
-elem->path : libft/bin/ft_isalnum.o
-elem->err : 
-elem->type : -
-#######END########
-ft_isalnum.o
-
-#######ft_debug_elems########
-elem->name : ft_print_array.o
-elem->path : libft/bin/ft_print_array.o
-elem->err : 
-elem->type : -
-#######END########
-ft_print_array.o
-
-#######ft_debug_elems########
-elem->name : ft_strnstr.o
-elem->path : libft/bin/ft_strnstr.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strnstr.o
-
-#######ft_debug_elems########
-elem->name : ft_strsplit.o
-elem->path : libft/bin/ft_strsplit.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strsplit.o
-
-#######ft_debug_elems########
-elem->name : ft_strrchr.o
-elem->path : libft/bin/ft_strrchr.o
-elem->err : 
-elem->type : -
-#######END########
-ft_strrchr.o
-
-#######ft_debug_elems########
-elem->name : ft_putchar.o
-elem->path : libft/bin/ft_putchar.o
-elem->err : 
-elem->type : -
-#######END########
-ft_putchar.o
-
-#######ft_debug_elems########
-elem->name : ft_isnegative.o
-elem->path : libft/bin/ft_isnegative.o
-elem->err : 
-elem->type : -
-#######END########
-ft_isnegative.o
-
-#######ft_debug_elems########
-elem->name : ft_join_array.o
-elem->path : libft/bin/ft_join_array.o
-elem->err : 
-elem->type : -
-#######END########
-ft_join_array.o
-
-#######ft_debug_elems########
-elem->name : ft_toupper.o
-elem->path : libft/bin/ft_toupper.o
-elem->err : 
-elem->type : -
-#######END########
-ft_toupper.o
-
-#######ft_debug_elems########
-elem->name : includes
-elem->path : libft/includes
-elem->err : 
-elem->type : d
-#######END########
-
-libft/includes:
-
-#######ft_debug_elems########
-elem->name : ft_print.h
-elem->path : libft/includes/ft_print.h
-elem->err : 
-elem->type : -
-#######END########
-ft_print.h
-
-#######ft_debug_elems########
-elem->name : ft_utils.h
-elem->path : libft/includes/ft_utils.h
-elem->err : 
-elem->type : -
-#######END########
-ft_utils.h
-
-#######ft_debug_elems########
-elem->name : ft_lst.h
-elem->path : libft/includes/ft_lst.h
-elem->err : 
-elem->type : -
-#######END########
-ft_lst.h
-
-#######ft_debug_elems########
-elem->name : ft_is.h
-elem->path : libft/includes/ft_is.h
-elem->err : 
-elem->type : -
-#######END########
-ft_is.h
-
-#######ft_debug_elems########
-elem->name : ft_array.h
-elem->path : libft/includes/ft_array.h
-elem->err : 
-elem->type : -
-#######END########
-ft_array.h
-
-#######ft_debug_elems########
-elem->name : ft_str.h
-elem->path : libft/includes/ft_str.h
-elem->err : 
-elem->type : -
-#######END########
-ft_str.h
-
-#######ft_debug_elems########
-elem->name : ft_matrix.h
-elem->path : libft/includes/ft_matrix.h
-elem->err : 
-elem->type : -
-#######END########
-ft_matrix.h
-
-#######ft_debug_elems########
-elem->name : ft_mem.h
-elem->path : libft/includes/ft_mem.h
-elem->err : 
-elem->type : -
-#######END########
-ft_mem.h
-
-#######ft_debug_elems########
-elem->name : libft.h
-elem->path : libft/libft.h
-elem->err : 
-elem->type : -
-#######END########
-libft.h
-
-#######ft_debug_elems########
-elem->name : auteur
-elem->path : libft/auteur
-elem->err : 
-elem->type : -
-#######END########
 auteur
-
-#######ft_debug_elems########
-elem->name : ft_is
-elem->path : libft/ft_is
-elem->err : 
-elem->type : d
-#######END########
-
-libft/ft_is:
-
-#######ft_debug_elems########
-elem->name : ft_isdigit.c
-elem->path : libft/ft_is/ft_isdigit.c
-elem->err : 
-elem->type : -
-#######END########
-ft_isdigit.c
-
-#######ft_debug_elems########
-elem->name : ft_isupper.c
-elem->path : libft/ft_is/ft_isupper.c
-elem->err : 
-elem->type : -
-#######END########
-ft_isupper.c
-
-#######ft_debug_elems########
-elem->name : ft_isalpha.c
-elem->path : libft/ft_is/ft_isalpha.c
-elem->err : 
-elem->type : -
-#######END########
-ft_isalpha.c
-
-#######ft_debug_elems########
-elem->name : ft_isalnum.c
-elem->path : libft/ft_is/ft_isalnum.c
-elem->err : 
-elem->type : -
-#######END########
-ft_isalnum.c
-
-#######ft_debug_elems########
-elem->name : ft_isascii.c
-elem->path : libft/ft_is/ft_isascii.c
-elem->err : 
-elem->type : -
-#######END########
-ft_isascii.c
-
-#######ft_debug_elems########
-elem->name : ft_isnegative.c
-elem->path : libft/ft_is/ft_isnegative.c
-elem->err : 
-elem->type : -
-#######END########
-ft_isnegative.c
-
-#######ft_debug_elems########
-elem->name : ft_isprint.c
-elem->path : libft/ft_is/ft_isprint.c
-elem->err : 
-elem->type : -
-#######END########
-ft_isprint.c
-
-#######ft_debug_elems########
-elem->name : ft_islower.c
-elem->path : libft/ft_is/ft_islower.c
-elem->err : 
-elem->type : -
-#######END########
-ft_islower.c
-
-#######ft_debug_elems########
-elem->name : ft_utils
-elem->path : libft/ft_utils
-elem->err : 
-elem->type : d
-#######END########
-
-libft/ft_utils:
-
-#######ft_debug_elems########
-elem->name : ft_toupper.c
-elem->path : libft/ft_utils/ft_toupper.c
-elem->err : 
-elem->type : -
-#######END########
-ft_toupper.c
-
-#######ft_debug_elems########
-elem->name : ft_wordcount.c
-elem->path : libft/ft_utils/ft_wordcount.c
-elem->err : 
-elem->type : -
-#######END########
-ft_wordcount.c
-
-#######ft_debug_elems########
-elem->name : ft_atoi.c
-elem->path : libft/ft_utils/ft_atoi.c
-elem->err : 
-elem->type : -
-#######END########
-ft_atoi.c
-
-#######ft_debug_elems########
-elem->name : ft_itoa.c
-elem->path : libft/ft_utils/ft_itoa.c
-elem->err : 
-elem->type : -
-#######END########
-ft_itoa.c
-
-#######ft_debug_elems########
-elem->name : ft_wordlen.c
-elem->path : libft/ft_utils/ft_wordlen.c
-elem->err : 
-elem->type : -
-#######END########
-ft_wordlen.c
-
-#######ft_debug_elems########
-elem->name : ft_itoa_base.c
-elem->path : libft/ft_utils/ft_itoa_base.c
-elem->err : 
-elem->type : -
-#######END########
-ft_itoa_base.c
-
-#######ft_debug_elems########
-elem->name : ft_get_next_line.c
-elem->path : libft/ft_utils/ft_get_next_line.c
-elem->err : 
-elem->type : -
-#######END########
-ft_get_next_line.c
-
-#######ft_debug_elems########
-elem->name : ft_nbrlen_base.c
-elem->path : libft/ft_utils/ft_nbrlen_base.c
-elem->err : 
-elem->type : -
-#######END########
-ft_nbrlen_base.c
-
-#######ft_debug_elems########
-elem->name : ft_nbrlen.c
-elem->path : libft/ft_utils/ft_nbrlen.c
-elem->err : 
-elem->type : -
-#######END########
-ft_nbrlen.c
-
-#######ft_debug_elems########
-elem->name : ft_bzero.c
-elem->path : libft/ft_utils/ft_bzero.c
-elem->err : 
-elem->type : -
-#######END########
-ft_bzero.c
-
-#######ft_debug_elems########
-elem->name : ft_colors.c
-elem->path : libft/ft_utils/ft_colors.c
-elem->err : 
-elem->type : -
-#######END########
-ft_colors.c
-
-#######ft_debug_elems########
-elem->name : ft_tolower.c
-elem->path : libft/ft_utils/ft_tolower.c
-elem->err : 
-elem->type : -
-#######END########
-ft_tolower.c
-
-#######ft_debug_elems########
-elem->name : ft_array
-elem->path : libft/ft_array
-elem->err : 
-elem->type : d
-#######END########
-
-libft/ft_array:
-
-#######ft_debug_elems########
-elem->name : ft_free_array.c
-elem->path : libft/ft_array/ft_free_array.c
-elem->err : 
-elem->type : -
-#######END########
-ft_free_array.c
-
-#######ft_debug_elems########
-elem->name : ft_count_raw_array.c
-elem->path : libft/ft_array/ft_count_raw_array.c
-elem->err : 
-elem->type : -
-#######END########
-ft_count_raw_array.c
-
-#######ft_debug_elems########
-elem->name : ft_join_array.c
-elem->path : libft/ft_array/ft_join_array.c
-elem->err : 
-elem->type : -
-#######END########
-ft_join_array.c
-
-#######ft_debug_elems########
-elem->name : ft_count_column_array.c
-elem->path : libft/ft_array/ft_count_column_array.c
-elem->err : 
-elem->type : -
-#######END########
-ft_count_column_array.c
-
-#######ft_debug_elems########
-elem->name : ft_print_array.c
-elem->path : libft/ft_array/ft_print_array.c
-elem->err : 
-elem->type : -
-#######END########
-ft_print_array.c
-
-#######ft_debug_elems########
-elem->name : Makefile
-elem->path : libft/Makefile
-elem->err : 
-elem->type : -
-#######END########
-Makefile
-
-#######ft_debug_elems########
-elem->name : libft.a
-elem->path : libft/libft.a
-elem->err : 
-elem->type : -
-#######END########
-libft.a
-
-#######ft_debug_elems########
-elem->name : ft_mem
-elem->path : libft/ft_mem
-elem->err : 
-elem->type : d
-#######END########
-
-libft/ft_mem:
-
-#######ft_debug_elems########
-elem->name : ft_memmove.c
-elem->path : libft/ft_mem/ft_memmove.c
-elem->err : 
-elem->type : -
-#######END########
-ft_memmove.c
-
-#######ft_debug_elems########
-elem->name : ft_memccpy.c
-elem->path : libft/ft_mem/ft_memccpy.c
-elem->err : 
-elem->type : -
-#######END########
-ft_memccpy.c
-
-#######ft_debug_elems########
-elem->name : ft_memchr.c
-elem->path : libft/ft_mem/ft_memchr.c
-elem->err : 
-elem->type : -
-#######END########
-ft_memchr.c
-
-#######ft_debug_elems########
-elem->name : ft_memcpy.c
-elem->path : libft/ft_mem/ft_memcpy.c
-elem->err : 
-elem->type : -
-#######END########
-ft_memcpy.c
-
-#######ft_debug_elems########
-elem->name : ft_memalloc.c
-elem->path : libft/ft_mem/ft_memalloc.c
-elem->err : 
-elem->type : -
-#######END########
-ft_memalloc.c
-
-#######ft_debug_elems########
-elem->name : ft_memset.c
-elem->path : libft/ft_mem/ft_memset.c
-elem->err : 
-elem->type : -
-#######END########
-ft_memset.c
-
-#######ft_debug_elems########
-elem->name : ft_memcmp.c
-elem->path : libft/ft_mem/ft_memcmp.c
-elem->err : 
-elem->type : -
-#######END########
-ft_memcmp.c
-
-#######ft_debug_elems########
-elem->name : ft_memdel.c
-elem->path : libft/ft_mem/ft_memdel.c
-elem->err : 
-elem->type : -
-#######END########
-ft_memdel.c
-
-#######ft_debug_elems########
-elem->name : srcs
-elem->path : srcs
-elem->err : 
-elem->type : d
-#######END########
-
-srcs:
-
-#######ft_debug_elems########
-elem->name : ft_parser.c
-elem->path : srcs/ft_parser.c
-elem->err : 
-elem->type : -
-#######END########
-ft_parser.c
-
-#######ft_debug_elems########
-elem->name : ft_show.c
-elem->path : srcs/ft_show.c
-elem->err : 
-elem->type : -
-#######END########
-ft_show.c
-
-#######ft_debug_elems########
-elem->name : ft_dir.c
-elem->path : srcs/ft_dir.c
-elem->err : 
-elem->type : -
-#######END########
-ft_dir.c
-
-#######ft_debug_elems########
-elem->name : ft_exit.c
-elem->path : srcs/ft_exit.c
-elem->err : 
-elem->type : -
-#######END########
-ft_exit.c
-
-#######ft_debug_elems########
-elem->name : ft_ls.c
-elem->path : srcs/ft_ls.c
-elem->err : 
-elem->type : -
-#######END########
-ft_ls.c
-
-#######ft_debug_elems########
-elem->name : ft_utils.c
-elem->path : srcs/ft_utils.c
-elem->err : 
-elem->type : -
-#######END########
-ft_utils.c
-
-#######ft_debug_elems########
-elem->name : bin
-elem->path : bin
-elem->err : 
-elem->type : d
-#######END########
 
 bin:
 
-#######ft_debug_elems########
-elem->name : includes
-elem->path : includes
-elem->err : 
-elem->type : d
-#######END########
-
-includes:
-
-#######ft_debug_elems########
-elem->name : ft_ls.h
-elem->path : includes/ft_ls.h
-elem->err : 
-elem->type : -
-#######END########
-ft_ls.h
-
-#######ft_debug_elems########
-elem->name : auteur
-elem->path : auteur
-elem->err : 
-elem->type : -
-#######END########
-auteur
-
-#######ft_debug_elems########
-elem->name : ft_ls
-elem->path : ft_ls
-elem->err : 
-elem->type : -
-#######END########
-ft_ls
-
-#######ft_debug_elems########
-elem->name : Makefile
-elem->path : Makefile
-elem->err : 
-elem->type : -
-#######END########
+libft:
 Makefile
-
-#######ft_debug_elems########
-elem->name : test
-elem->path : test
-elem->err : 
-elem->type : -
-#######END########
-test
-
-#######ft_debug_elems########
-elem->name : man
-elem->path : man
-elem->err : 
-elem->type : d
-#######END########
-
-man:
-
-#######ft_debug_elems########
-elem->name : stat.txt
-elem->path : man/stat.txt
-elem->err : 
-elem->type : -
-#######END########
-stat.txt
-
-#######ft_debug_elems########
-elem->name : ls.txt
-elem->path : man/ls.txt
-elem->err : 
-elem->type : -
-#######END########
-ls.txt
-libft
-srcs
-bin
-includes
-.
-..
 auteur
-ft_ls
-.git
-Makefile
-test
-man
-ft_matrix
-ft_print
-ft_lst
-.gitignore
-ft_str
 bin
-includes
-.
-..
-libft.h
-auteur
-ft_is
-ft_utils
 ft_array
-.git
-Makefile
-libft.a
+ft_is
+ft_lst
+ft_matrix
 ft_mem
-.
-..
+ft_print
+ft_str
+ft_utils
+includes
+libft.a
+libft.h
+
+libft/bin:
+ft_atoi.o
+ft_bzero.o
+ft_colors.o
+ft_count_column_array.o
+ft_count_raw_array.o
+ft_free_array.o
+ft_get_next_line.o
+ft_isalnum.o
+ft_isalpha.o
+ft_isascii.o
+ft_isdigit.o
+ft_islower.o
+ft_isnegative.o
+ft_isprint.o
+ft_isupper.o
+ft_itoa.o
+ft_itoa_base.o
+ft_join_array.o
+ft_lstadd.o
+ft_lstaddend.o
+ft_lstdel.o
+ft_lstdelone.o
+ft_lstiter.o
+ft_lstmap.o
+ft_lstnew.o
+ft_lstreverse.o
+ft_lstsort.o
+ft_matrix_create.o
+ft_memalloc.o
+ft_memccpy.o
+ft_memchr.o
+ft_memcmp.o
+ft_memcpy.o
+ft_memdel.o
+ft_memmove.o
+ft_memset.o
+ft_nbrlen.o
+ft_nbrlen_base.o
+ft_print_array.o
+ft_putchar.o
+ft_putchar_fd.o
+ft_putendl.o
+ft_putendl_fd.o
+ft_putnbr.o
+ft_putnbr_fd.o
+ft_putstr.o
+ft_putstr_fd.o
+ft_puttab.o
+ft_strcat.o
+ft_strchr.o
+ft_strclr.o
+ft_strcmp.o
+ft_strcpy.o
+ft_strcut.o
+ft_strdel.o
+ft_strdup.o
+ft_strequ.o
+ft_strfjoin.o
+ft_striter.o
+ft_striteri.o
+ft_strjoin.o
+ft_strlcat.o
+ft_strlen.o
+ft_strmap.o
+ft_strmapi.o
+ft_strncat.o
+ft_strncmp.o
+ft_strncpy.o
+ft_strnequ.o
+ft_strnew.o
+ft_strnstr.o
+ft_strrchr.o
+ft_strrev.o
+ft_strsplit.o
+ft_strstr.o
+ft_strsub.o
+ft_strtrim.o
+ft_tolower.o
+ft_toupper.o
+ft_wordcount.o
+ft_wordlen.o
+
+libft/ft_array:
+ft_count_column_array.c
+ft_count_raw_array.c
+ft_free_array.c
+ft_join_array.c
+ft_print_array.c
+
+libft/ft_is:
+ft_isalnum.c
+ft_isalpha.c
+ft_isascii.c
+ft_isdigit.c
+ft_islower.c
+ft_isnegative.c
+ft_isprint.c
+ft_isupper.c
+
+libft/ft_lst:
+ft_lstadd.c
+ft_lstaddend.c
+ft_lstdel.c
+ft_lstdelone.c
+ft_lstiter.c
+ft_lstmap.c
+ft_lstnew.c
+ft_lstreverse.c
+ft_lstsort.c
+
+libft/ft_matrix:
 ft_matrix_create.c
-ft_putstr_fd.c
+
+libft/ft_mem:
+ft_memalloc.c
+ft_memccpy.c
+ft_memchr.c
+ft_memcmp.c
+ft_memcpy.c
+ft_memdel.c
+ft_memmove.c
+ft_memset.c
+
+libft/ft_print:
+ft_putchar.c
+ft_putchar_fd.c
+ft_putendl.c
+ft_putendl_fd.c
 ft_putnbr.c
 ft_putnbr_fd.c
 ft_putstr.c
-ft_putchar.c
-.
-..
+ft_putstr_fd.c
 ft_puttab.c
-ft_putchar_fd.c
-ft_putendl_fd.c
-ft_putendl.c
-ft_lstaddend.c
-ft_lstadd.c
-ft_lstiter.c
-ft_lstdelone.c
-ft_lstmap.c
-ft_lstnew.c
-.
-..
-ft_lstdel.c
-ft_striteri.c
-ft_strstr.c
-ft_strcpy.c
-ft_strncat.c
-ft_strncmp.c
+
+libft/ft_str:
+ft_strcat.c
 ft_strchr.c
-ft_strtrim.c
-ft_strsplit.c
-ft_strdel.c
-ft_strnew.c
+ft_strclr.c
+ft_strcmp.c
+ft_strcpy.c
 ft_strcut.c
+ft_strdel.c
+ft_strdup.c
 ft_strequ.c
-ft_strnstr.c
-ft_strsub.c
-ft_strrchr.c
-.
-..
-ft_strmapi.c
+ft_strfjoin.c
+ft_striter.c
+ft_striteri.c
 ft_strjoin.c
+ft_strlcat.c
 ft_strlen.c
 ft_strmap.c
-ft_strrev.c
-ft_strclr.c
-ft_striter.c
+ft_strmapi.c
+ft_strncat.c
+ft_strncmp.c
 ft_strncpy.c
-ft_strcat.c
 ft_strnequ.c
-ft_strcmp.c
-ft_strfjoin.c
-ft_strdup.c
-ft_strlcat.c
-ft_count_column_array.o
-ft_wordlen.o
-ft_lstaddend.o
-ft_matrix_create.o
-ft_putendl_fd.o
-ft_lstdelone.o
-ft_lstiter.o
-ft_strcut.o
-ft_strnew.o
-ft_memchr.o
-ft_strmapi.o
-ft_strlen.o
-ft_putstr_fd.o
-ft_lstnew.o
-ft_lstadd.o
-ft_isdigit.o
-ft_memccpy.o
-ft_putendl.o
-ft_strlcat.o
-ft_islower.o
-ft_memdel.o
-ft_strclr.o
-ft_strchr.o
-ft_memset.o
-ft_free_array.o
-ft_putstr.o
-ft_strsub.o
-ft_itoa.o
-ft_strfjoin.o
-ft_wordcount.o
-ft_striter.o
-ft_strequ.o
-ft_memalloc.o
-ft_isascii.o
-ft_putnbr_fd.o
-ft_strjoin.o
-ft_strtrim.o
-ft_putchar_fd.o
-ft_itoa_base.o
-.
-..
-ft_lstdel.o
-ft_get_next_line.o
-ft_nbrlen.o
-ft_memcpy.o
-ft_strcat.o
-ft_atoi.o
-ft_lstmap.o
-ft_nbrlen_base.o
-ft_strdup.o
-ft_puttab.o
-ft_memmove.o
-ft_strdel.o
-ft_isupper.o
-ft_strcpy.o
-ft_strcmp.o
-ft_tolower.o
-ft_bzero.o
-ft_strncpy.o
-ft_strmap.o
-ft_colors.o
-ft_strrev.o
-ft_isprint.o
-ft_striteri.o
-ft_count_raw_array.o
-ft_strnequ.o
-ft_strstr.o
-ft_putnbr.o
-ft_strncat.o
-ft_memcmp.o
-ft_strncmp.o
-ft_isalpha.o
-ft_isalnum.o
-ft_print_array.o
-ft_strnstr.o
-ft_strsplit.o
-ft_strrchr.o
-ft_putchar.o
-ft_isnegative.o
-ft_join_array.o
-ft_toupper.o
-ft_print.h
-ft_utils.h
-ft_lst.h
-.
-..
-ft_is.h
-ft_array.h
-ft_str.h
-ft_matrix.h
-ft_mem.h
-ft_isdigit.c
-ft_isupper.c
-ft_isalpha.c
-ft_isalnum.c
-.
-..
-ft_isascii.c
-ft_isnegative.c
-ft_isprint.c
-ft_islower.c
-ft_toupper.c
-ft_wordcount.c
+ft_strnew.c
+ft_strnstr.c
+ft_strrchr.c
+ft_strrev.c
+ft_strsplit.c
+ft_strstr.c
+ft_strsub.c
+ft_strtrim.c
+
+libft/ft_utils:
 ft_atoi.c
-.
-..
-ft_itoa.c
-ft_wordlen.c
-ft_itoa_base.c
-ft_get_next_line.c
-ft_nbrlen_base.c
-ft_nbrlen.c
 ft_bzero.c
 ft_colors.c
+ft_get_next_line.c
+ft_itoa.c
+ft_itoa_base.c
+ft_nbrlen.c
+ft_nbrlen_base.c
 ft_tolower.c
-ft_free_array.c
-ft_count_raw_array.c
-.
-..
-ft_join_array.c
-ft_count_column_array.c
-ft_print_array.c
-ft_memmove.c
-.
-..
-ft_memccpy.c
-ft_memchr.c
-ft_memcpy.c
-ft_memalloc.c
-ft_memset.c
-ft_memcmp.c
-ft_memdel.c
-ft_parser.c
-ft_show.c
-ft_dir.c
-ft_exit.c
-.
-..
-ft_ls.c
-ft_utils.c
-.
-..
-.
-..
-ft_ls.h
-stat.txt
-ls.txt
-.
-..
+ft_toupper.c
+ft_wordcount.c
+ft_wordlen.c
+
+libft/includes:
+ft_array.h
+ft_is.h
+ft_lst.h
+ft_matrix.h
+ft_mem.h
+ft_print.h
+ft_str.h
+ft_utils.h

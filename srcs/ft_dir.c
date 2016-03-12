@@ -21,15 +21,23 @@ void	ft_open_dir(const void *ev, t_list *node)
 	t_env			*env;
 
 	env = (t_env *)ev;
-	elem = node->content;
+	
 	lst = NULL;
 	//ft_debug_elems(node);
+	ft_lst_bubble_sort(node, ft_sort_by_lexycography);
+	elem = node->content;
 	pDir = NULL;
 	if (elem->type == 'd')
 	{
-		if (strcmp(elem->path, "."))
+		if ((strcmp(elem->path, ".") && env->opt.R))
 		{
 			ft_putstr("\n./");
+			ft_putstr(elem->path);
+			ft_putstr(":\n");
+		}
+		else if(strcmp(elem->path, "."))
+		{
+			ft_putstr("\n");
 			ft_putstr(elem->path);
 			ft_putstr(":\n");
 		}
@@ -41,12 +49,12 @@ void	ft_open_dir(const void *ev, t_list *node)
 			ft_lstaddend(&lst, ft_lstnew(ft_create_elem(pDirent->d_name, elem->path), sizeof(t_elem)));
 		}
 		ft_lst_bubble_sort(lst, ft_sort_by_lexycography);
-		if (env->opt.R)
-				ft_lstiter_if_plus(lst, ev, ft_open_dir, reject_dot_folder);
 		if (env->opt.a)
 			ft_lstiter(lst, ft_show_name);
 		else
 			ft_lstiter_if(lst, ft_show_name, reject_dot_folder);
+		if (env->opt.R)
+				ft_lstiter_if_plus(lst, ev, ft_open_dir, reject_dot_folder);
 
 		closedir (pDir);
 	}
