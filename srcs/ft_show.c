@@ -48,3 +48,19 @@ void	ft_debug_elems(t_list *node)
 	ft_putchar(elem->type);
 	ft_putstr("\n#######END########\n");
 }
+void	ft_show_name(t_list *node)
+{
+	t_elem *elem;
+
+	elem = node->content;
+	if (elem->err)
+	{
+		ft_putstr(elem->err);
+		ft_putstr("\n");
+	}
+	else
+	{
+		ft_putstr(elem->name);
+		ft_putstr("\n");
+	}
+}

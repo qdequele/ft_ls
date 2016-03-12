@@ -36,7 +36,7 @@ void	ft_ls(int ac, char **av)
 		ft_memory_error();
 	env->lst = NULL;
 	ft_parser(env, ac, av);
-	ft_debug_t_opt(env->opt);
+	//ft_debug_t_opt(env->opt);
 	//ft_elem_for_each(env, ft_debug_elems);
-	ft_lstiter(env->lst, ft_open_dir);
+	ft_lstiter_plus(env->lst, env, ft_open_dir);
 }

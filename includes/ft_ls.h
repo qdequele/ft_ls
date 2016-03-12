@@ -46,7 +46,7 @@ typedef struct		s_env
 }					t_env;
 
 //ft_dir.c
-void				ft_open_dir(t_list *lst);
+void				ft_open_dir(const void *env, t_list *lst);
 //ft_exit.c
 void				ft_not_found_exit(char *str);
 void				ft_illegal_option_exit(char *str);
@@ -61,6 +61,7 @@ void				ft_parser(t_env *env, int ac, char **av);
 //ft_show.c
 void				ft_debug_t_opt(t_opt opt);
 void				ft_debug_elems(t_list *node);
+void				ft_show_name(t_list *node);
 //ft_utils.c
 char				ft_get_type_of(struct stat stat);
 char				*ft_not_found_concat(char *str);

@@ -12,31 +12,37 @@
 
 #include "ft_ls.h"
 
-void	ft_open_dir(t_list *node)
+void	ft_open_dir(const void *ev, t_list *node)
 {
 	struct dirent	*pDirent;
 	DIR				*pDir;
 	t_elem			*elem;
 	t_list			*lst;
+	t_env			*env;
 
+	env = (t_env *)ev;
 	elem = node->content;
 	lst = NULL;
 	//ft_debug_elems(node);
 	pDir = NULL;
-	if (elem->type == 'd' && elem->path)
+	if (elem->type == 'd' )
 	{
-		ft_putstr("\n");
-		ft_putstr(elem->path);
-		ft_putstr(":\n");
+		if (strcmp(elem->path, "."))
+		{
+			ft_putstr("\n./");
+			ft_putstr(elem->path);
+			ft_putstr(":\n");
+		}
 		pDir = opendir (elem->path);
 		if (pDir == NULL) {
 			ft_not_found_exit(elem->path);
 		}
 		while ((pDirent = readdir(pDir)) != NULL) {
-			printf ("%s\n", pDirent->d_name);
 			ft_lstaddend(&lst, ft_lstnew(ft_create_elem(pDirent->d_name, elem->path), sizeof(t_elem)));
 		}
-		ft_lstiter_if(lst, ft_open_dir, reject_dot_folder);
+		if (env->opt.R)
+			ft_lstiter_if_plus(lst, ev, ft_open_dir, reject_dot_folder);
+		ft_lstiter_if(lst, ft_show_name, reject_dot_folder);
 		closedir (pDir);
 	}
 	else
