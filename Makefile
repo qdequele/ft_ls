@@ -12,7 +12,7 @@
 
 #Define the program
 NAME		= ft_ls
-_SRC		= ft_dir.c ft_exit.c ft_ls.c ft_parser.c ft_show.c ft_utils.c
+_SRC		= ft_dir.c ft_exit.c ft_ls.c ft_parser.c ft_show.c ft_sort.c ft_utils.c
 SRC			= $(addprefix srcs/,$(_SRC))
 CFLAGS		= -Wall -Wextra -Werror
 LIBFT		= -Llibft -lft -Ilibft

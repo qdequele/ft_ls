@@ -25,7 +25,7 @@ void	ft_open_dir(const void *ev, t_list *node)
 	lst = NULL;
 	//ft_debug_elems(node);
 	pDir = NULL;
-	if (elem->type == 'd' )
+	if (elem->type == 'd')
 	{
 		if (strcmp(elem->path, "."))
 		{
@@ -40,9 +40,14 @@ void	ft_open_dir(const void *ev, t_list *node)
 		while ((pDirent = readdir(pDir)) != NULL) {
 			ft_lstaddend(&lst, ft_lstnew(ft_create_elem(pDirent->d_name, elem->path), sizeof(t_elem)));
 		}
+		ft_lst_bubble_sort(lst, ft_sort_by_lexycography);
 		if (env->opt.R)
-			ft_lstiter_if_plus(lst, ev, ft_open_dir, reject_dot_folder);
-		ft_lstiter_if(lst, ft_show_name, reject_dot_folder);
+				ft_lstiter_if_plus(lst, ev, ft_open_dir, reject_dot_folder);
+		if (env->opt.a)
+			ft_lstiter(lst, ft_show_name);
+		else
+			ft_lstiter_if(lst, ft_show_name, reject_dot_folder);
+
 		closedir (pDir);
 	}
 	else
