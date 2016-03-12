@@ -64,7 +64,8 @@ void	ft_parse_option(t_env *env, char *str)
 
 void	ft_parse_elems(t_env *env, char *str)
 {
-	printf("test1\n");
-	ft_push_elem(env, ft_create_elem(str));
-	printf("test2\n");
+	t_elem	*new_elem;
+
+	new_elem = ft_create_elem(str, "");
+	ft_lstaddend(&(env->lst), ft_lstnew(new_elem, sizeof(t_elem)));
 }

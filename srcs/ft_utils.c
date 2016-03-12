@@ -39,3 +39,37 @@ char	*ft_not_found_concat(char *str)
 	ft_strcat(err, ": No such file or directory\n");
 	return (err);
 }
+
+t_elem	*ft_create_elem(char *str, char *prev_path)
+{
+	t_elem	*new_elem;
+
+	if (!(new_elem = malloc(sizeof(t_elem))))
+		ft_memory_error();
+	if (!(new_elem->path = malloc(sizeof(char) * (ft_strlen(str) + ft_strlen(prev_path) + 1))))
+		ft_memory_error();
+	if (ft_strlen(prev_path) > 0)
+		prev_path = ft_strjoin(prev_path, "/");
+	new_elem->path = ft_strjoin(prev_path, str);
+	new_elem->name = str;
+	new_elem->next = NULL;
+	if (lstat(str, &new_elem->stat) == -1)
+	{
+		new_elem->err = ft_not_found_concat(str);
+	}
+	else
+	{
+		new_elem->type = ft_get_type_of(new_elem->stat);
+	}
+	return (new_elem);
+}
+
+int		reject_dot_folder(t_list *node)
+{
+	t_elem	*elem;
+
+	elem = node->content;
+	if (strcmp(elem->name, ".") == 0 || strcmp(elem->name, "..") == 0)
+		return (0);
+	return (1);
+}

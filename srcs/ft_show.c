@@ -29,9 +29,15 @@ void	ft_debug_t_opt(t_opt opt)
 	ft_putstr("\n#######END########\n");
 }
 
-void	ft_debug_elems(t_elem *elem)
+void	ft_debug_elems(t_list *node)
 {
+	t_elem *elem;
+
+	elem = node->content;
 	ft_putstr("\n#######ft_debug_elems########");
+	ft_putstr("\nelem->name : ");
+	if (elem->name)
+		ft_putstr(elem->name);
 	ft_putstr("\nelem->path : ");
 	if (elem->path)
 		ft_putstr(elem->path);
@@ -41,11 +47,4 @@ void	ft_debug_elems(t_elem *elem)
 	ft_putstr("\nelem->type : ");
 	ft_putchar(elem->type);
 	ft_putstr("\n#######END########\n");
-}
-
-void	ft_debug_lst(t_list *elem)
-{
-	ft_putnbr(sizeof(elem));
-	ft_putstr(" : taille \n");
-	//ft_debug_elems((elem->content));
 }

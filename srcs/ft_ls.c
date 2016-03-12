@@ -12,6 +12,16 @@
 
 #include "ft_ls.h"
 
+void	ft_init_opt(t_env *env)
+{
+	env->opt.l = 0;
+	env->opt.R = 0;
+	env->opt.a = 0;
+	env->opt.r = 0;
+	env->opt.t = 0;
+}
+
+
 int		main(int ac, char **av)
 {
 	ft_ls(ac, av);
@@ -24,9 +34,9 @@ void	ft_ls(int ac, char **av)
 
 	if (!(env = (t_env *)malloc(sizeof(t_env))))
 		ft_memory_error();
-	env->elems = NULL;
+	env->lst = NULL;
 	ft_parser(env, ac, av);
 	ft_debug_t_opt(env->opt);
 	//ft_elem_for_each(env, ft_debug_elems);
-	ft_elem_for_each(env, ft_open_dir);
+	ft_lstiter(env->lst, ft_open_dir);
 }
