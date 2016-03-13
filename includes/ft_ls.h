@@ -32,11 +32,12 @@ typedef struct		s_elem
 
 typedef struct		s_opt
 {
-	int				l;
-	int				R;
-	int				a;
-	int				r;
-	int				t;
+	int				l;//List with all atributes--
+	int				R;//Recursive -- OK
+	int				a;//include hidden file (.*) -- OK
+	int				r;//reverse sorting -- OK
+	int				t;//sort by last modification --
+	int				args;// if ls have params -- OK
 }					t_opt;
 
 typedef struct		s_env
@@ -46,7 +47,11 @@ typedef struct		s_env
 }					t_env;
 
 //ft_dir.c
-void				ft_open_dir(const void *env, t_list *lst);
+void				ft_compute(const void *env, t_list *lst);
+void				ft_compute_dir(const void *ev, t_list *node);
+void				ft_select_sort(t_env *env, t_list *node);
+void				ft_show_path(t_env *env, t_elem *elem);
+void				ft_show_files(t_env *env, t_list *node);
 //ft_exit.c
 void				ft_not_found_exit(char *str);
 void				ft_illegal_option_exit(char *str);

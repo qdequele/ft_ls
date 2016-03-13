@@ -32,6 +32,7 @@ void	ft_parser(t_env *env, int ac, char **av)
 		ft_parse_elems(env, ".");
 	while (i < ac && av[i])
 	{
+		env->opt.args++;
 		ft_parse_elems(env, av[i]);
 		i++;
 	}
