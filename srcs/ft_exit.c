@@ -16,8 +16,8 @@ void	ft_not_found_exit(char *str)
 {
 	ft_putstr("ls: ");
 	ft_putstr(str);
-	ft_putstr(": No such file or directory\n");
-	exit(0);
+	ft_putstr(": No such file or directory");
+	//exit(0);
 }
 
 void	ft_illegal_option_exit(char *str)

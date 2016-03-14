@@ -27,7 +27,6 @@ typedef struct		s_elem
 	char			*path;
 	char			*err;
 	char			type;
-	struct s_elem	*next;
 }					t_elem;
 
 typedef struct		s_opt
@@ -44,12 +43,14 @@ typedef struct		s_env
 {
 	t_opt			opt;
 	t_list			*lst;
+	int				first;
+	int				has_files;
 }					t_env;
 
 //ft_dir.c
 void				ft_compute(const void *env, t_list *lst);
 void				ft_compute_dir(const void *ev, t_list *node);
-void				ft_select_sort(t_env *env, t_list *node);
+void				ft_select_sort(t_env *env, t_list **node);
 void				ft_show_path(t_env *env, t_elem *elem);
 void				ft_show_files(t_env *env, t_list *node);
 //ft_exit.c
@@ -66,14 +67,18 @@ void				ft_parser(t_env *env, int ac, char **av);
 //ft_show.c
 void				ft_debug_t_opt(t_opt opt);
 void				ft_debug_elems(t_list *node);
+void				ft_debug_elems_b(t_list *node);
+void				ft_debug_elems_a(t_list *node);
 void				ft_show_name(t_list *node);
 //ft_sort.c
-int					ft_sort_by_modification_time(t_list *node);
-int					ft_sort_reverse(t_list *node);
 int					ft_sort_by_lexycography(t_list *node);
+int					ft_sort_by_lexycography_folder_end(t_list *node);
+int					ft_sort_by_modification_time(t_list *node);
+int					ft_sort_reverse(t_list **node);
 //ft_utils.c
 char				ft_get_type_of(struct stat stat);
 char				*ft_not_found_concat(char *str);
 t_elem				*ft_create_elem(char *str, char *prev_path);
+void				ft_free_elem(void *content, size_t size);
 int					reject_dot_folder(t_list *node);
 #endif

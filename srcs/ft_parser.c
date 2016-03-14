@@ -68,5 +68,7 @@ void	ft_parse_elems(t_env *env, char *str)
 	t_elem	*new_elem;
 
 	new_elem = ft_create_elem(str, "");
+	if (new_elem->type != 'd')
+		env->has_files++;
 	ft_lstaddend(&(env->lst), ft_lstnew(new_elem, sizeof(t_elem)));
 }

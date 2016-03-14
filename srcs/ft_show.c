@@ -48,6 +48,47 @@ void	ft_debug_elems(t_list *node)
 	ft_putchar(elem->type);
 	ft_putstr("\n#######END########\n");
 }
+
+void	ft_debug_elems_b(t_list *node)
+{
+	t_elem *elem;
+
+	elem = node->content;
+	ft_putstr("\n#######ft_debug_elems before########");
+	ft_putstr("\nelem->name : ");
+	if (elem->name)
+		ft_putstr(elem->name);
+	ft_putstr("\nelem->path : ");
+	if (elem->path)
+		ft_putstr(elem->path);
+	ft_putstr("\nelem->err : ");
+	if (elem->err) 
+		ft_putstr(elem->err);
+	ft_putstr("\nelem->type : ");
+	ft_putchar(elem->type);
+	ft_putstr("\n#######END########\n");
+}
+
+void	ft_debug_elems_a(t_list *node)
+{
+	t_elem *elem;
+
+	elem = node->content;
+	ft_putstr("\n#######ft_debug_elems after########");
+	ft_putstr("\nelem->name : ");
+	if (elem->name)
+		ft_putstr(elem->name);
+	ft_putstr("\nelem->path : ");
+	if (elem->path)
+		ft_putstr(elem->path);
+	ft_putstr("\nelem->err : ");
+	if (elem->err) 
+		ft_putstr(elem->err);
+	ft_putstr("\nelem->type : ");
+	ft_putchar(elem->type);
+	ft_putstr("\n#######END########\n");
+}
+
 void	ft_show_name(t_list *node)
 {
 	t_elem *elem;
@@ -60,7 +101,10 @@ void	ft_show_name(t_list *node)
 	}
 	else
 	{
-		ft_putstr(elem->name);
+		if (elem->type == 'd')
+			ft_putstr_c(CYAN, elem->name);
+		else
+			ft_putstr(elem->name);
 		ft_putstr("\n");
 	}
 }

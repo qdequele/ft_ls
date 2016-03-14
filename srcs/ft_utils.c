@@ -34,9 +34,9 @@ char	*ft_not_found_concat(char *str)
 {
 	char	*err;
 	err = malloc(sizeof(char) * (ft_strlen(str) + 32));
-	ft_strcat(err, "ls:");
+	ft_strcat(err, "ls: ");
 	ft_strcat(err, str);
-	ft_strcat(err, ": No such file or directory\n");
+	ft_strcat(err, ": No such file or directory");
 	return (err);
 }
 
@@ -57,7 +57,6 @@ t_elem	*ft_create_elem(char *str, char *prev_path)
 		new_elem->path = ft_strjoin(prev_path, str);
 	}
 	new_elem->name = str;
-	new_elem->next = NULL;
 	if (lstat(new_elem->path, &new_elem->stat) == -1)
 	{
 		new_elem->err = ft_not_found_concat(str);
@@ -69,12 +68,27 @@ t_elem	*ft_create_elem(char *str, char *prev_path)
 	return (new_elem);
 }
 
+void	ft_free_elem(void *content, size_t size)
+{
+	t_elem	*elem;
+
+	size = 0;
+	elem = (t_elem*)content;
+	if (elem->name)
+		free(elem->name);
+	if (elem->path)
+		free(elem->path);
+	if (elem->err)
+		free(elem->err);
+	free(elem);
+}
+
 int		reject_dot_folder(t_list *node)
 {
 	t_elem	*elem;
 
 	elem = node->content;
-	if (strncmp(elem->name, ".", 1) == 0 || strncmp(elem->name, "..", 1) == 0)
+	if (strncmp(elem->name, ".", 1) == 0)
 		return (0);
 	return (1);
 }

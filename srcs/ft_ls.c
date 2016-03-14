@@ -20,6 +20,8 @@ void	ft_init_opt(t_env *env)
 	env->opt.r = 0;
 	env->opt.t = 0;
 	env->opt.args = 0;
+	env->first = 0;
+	env->has_files = 0;
 }
 
 
