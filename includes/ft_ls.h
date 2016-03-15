@@ -17,6 +17,9 @@
 # include <sys/stat.h>
 # include <unistd.h>
 # include <dirent.h>
+# include <pwd.h>
+# include <grp.h>
+# include <time.h>
 #include <stdio.h>
 
 
@@ -36,7 +39,13 @@ typedef struct		s_opt
 	int				a;//include hidden file (.*) -- OK
 	int				r;//reverse sorting -- OK
 	int				t;//sort by last modification --
-	int				args;// if ls have params -- OK
+	int				n;//remplace le nom et le groupe par l'UID et le GID -- OPT
+	int				c;//enable color -- OPT
+	int				i;//add inode to begening file -- OPT
+	int				h;//set the size of file readable -- OPT
+	int				F;//ajoute le type a la fin du nom du fichier -- OPT
+	int				L;//utiliser lstat au lieux de stat -- OPT
+	int				args;// nombres d'arguments -- OK
 }					t_opt;
 
 typedef struct		s_env
@@ -57,6 +66,11 @@ void				ft_show_files(t_env *env, t_list *node);
 void				ft_not_found_exit(char *str);
 void				ft_illegal_option_exit(char *str);
 void				ft_memory_error();
+//ft_get_info.c
+char				*ft_get_name(uid_t uid);
+char				*ft_get_group(gid_t gid);
+char				*ft_get_time(time_t timestamp);
+char				*ft_get_right(mode_t st_mode);
 //ft_ls.c
 void				ft_init_opt(t_env *env);
 void				ft_ls(int ac, char **av);
@@ -73,6 +87,7 @@ void				ft_show_name(t_list *node);
 //ft_sort.c
 int					ft_sort_by_lexycography(t_list *node);
 int					ft_sort_by_lexycography_folder_end(t_list *node);
+int					ft_sort_by_lexycography_folder_end_r(t_list *node);
 int					ft_sort_by_modification_time(t_list *node);
 int					ft_sort_reverse(t_list **node);
 //ft_utils.c

@@ -24,6 +24,7 @@ void	ft_compute(const void *ev, t_list *node)
 	}
 	else
 	{
+		((t_env *)ev)->first++;
 		ft_show_name(node);
 	}
 }
@@ -60,8 +61,18 @@ void	ft_select_sort(t_env *env, t_list **node)
 		ft_lst_bubble_sort(*node, ft_sort_by_modification_time);
 	else
 	{
-		if (env->has_files != 0)
-			ft_lst_bubble_sort(*node, ft_sort_by_lexycography_folder_end);
+		if (env->has_files != 0 && env->first == 0)
+		{
+			if (env->opt.r)
+			{
+				ft_lst_bubble_sort(*node, ft_sort_by_lexycography_folder_end_r);
+				return ;
+			}
+			else
+			{
+				ft_lst_bubble_sort(*node, ft_sort_by_lexycography_folder_end);
+			}
+		}
 		else
 			ft_lst_bubble_sort(*node, ft_sort_by_lexycography);
 	}
@@ -84,7 +95,6 @@ void	ft_show_path(t_env *env, t_elem *elem)
 		ft_putstr_c(YELLOW, elem->path);
 		ft_putstr_c(YELLOW, ":\n");
 	}
-	env->opt.args++;
 }
 
 void	ft_show_files(t_env *env, t_list *node)

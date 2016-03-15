@@ -94,17 +94,26 @@ void	ft_show_name(t_list *node)
 	t_elem *elem;
 
 	elem = node->content;
-	if (elem->err)
-	{
-		ft_putstr(elem->err);
-		ft_putstr("\n");
-	}
-	else
-	{
-		if (elem->type == 'd')
-			ft_putstr_c(CYAN, elem->name);
-		else
-			ft_putstr(elem->name);
-		ft_putstr("\n");
-	}
+	printf("%c%s \t%d \t%s %s \t%d \t%s %s\n", 
+		elem->type, 
+		ft_get_right(elem->stat.st_mode),
+		(int)elem->stat.st_nlink, 
+		ft_get_name(elem->stat.st_uid), 
+		ft_get_group(elem->stat.st_gid), 
+		(int)elem->stat.st_size, 
+		ft_get_time(elem->stat.st_mtime), 
+		elem->name);
+	// if (elem->err)
+	// {
+	// 	ft_putstr(elem->err);
+	// 	ft_putstr("\n");
+	// }
+	// else
+	// {
+	// 	if (elem->type == 'd')
+	// 		ft_putstr_c(CYAN, elem->name);
+	// 	else
+	// 		ft_putstr(elem->name);
+	// 	ft_putstr("\n");
+	// }
 }
