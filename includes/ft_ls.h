@@ -32,6 +32,12 @@ typedef struct		s_elem
 	char			type;
 }					t_elem;
 
+typedef struct		s_cwidth
+{
+	int				nb_link;
+	int				nb_size;
+}					t_cwidth;
+
 typedef struct		s_opt
 {
 	int				l;//List with all atributes--
@@ -45,6 +51,10 @@ typedef struct		s_opt
 	int				h;//set the size of file readable -- OPT
 	int				F;//ajoute le type a la fin du nom du fichier -- OPT
 	int				L;//utiliser lstat au lieux de stat -- OPT
+	int				S;//sort by size -- OPT
+	int				T;//afficher completement la date -- OPT
+	int				g;
+	int				m;
 	int				args;// nombres d'arguments -- OK
 }					t_opt;
 
@@ -64,8 +74,9 @@ void				ft_show_path(t_env *env, t_elem *elem);
 void				ft_show_files(t_env *env, t_list *node);
 //ft_exit.c
 void				ft_not_found_exit(char *str);
-void				ft_illegal_option_exit(char *str);
+void				ft_illegal_option_exit(char c);
 void				ft_memory_error();
+void				ft_show_help();
 //ft_get_info.c
 char				*ft_get_name(uid_t uid);
 char				*ft_get_group(gid_t gid);
@@ -75,15 +86,15 @@ char				*ft_get_right(mode_t st_mode);
 void				ft_init_opt(t_env *env);
 void				ft_ls(int ac, char **av);
 //ft_parser.c
-void				ft_parse_option(t_env *env, char *str);
-void				ft_parse_elems(t_env *env, char *str);
 void				ft_parser(t_env *env, int ac, char **av);
+void				ft_parse_options(t_env *env, char *str);
+void				ft_parse_option(t_env *env, char c);
+void				ft_parse_elems(t_env *env, char *str);
 //ft_show.c
 void				ft_debug_t_opt(t_opt opt);
 void				ft_debug_elems(t_list *node);
-void				ft_debug_elems_b(t_list *node);
-void				ft_debug_elems_a(t_list *node);
 void				ft_show_name(t_list *node);
+void				ft_show_detailled_name(t_list *node);
 //ft_sort.c
 int					ft_sort_by_lexycography(t_list *node);
 int					ft_sort_by_lexycography_folder_end(t_list *node);

@@ -82,7 +82,7 @@ void	ft_select_sort(t_env *env, t_list **node)
 
 void	ft_show_path(t_env *env, t_elem *elem)
 {
-	if (env->first++ != 0)
+	if (env->first != 0)
 		ft_putstr("\n");
 	if ((strcmp(elem->path, ".") && env->opt.R && env->opt.args == 0))
 	{
@@ -90,7 +90,8 @@ void	ft_show_path(t_env *env, t_elem *elem)
 		ft_putstr_c(YELLOW, elem->path);
 		ft_putstr_c(YELLOW, ":\n");
 	}
-	else if(strcmp(elem->path, ".") && env->opt.args > 1)
+	// else if(strcmp(elem->path, ".") && env->opt.args > 1)
+	else if(env->opt.args >= 1 && env->first++ != 0)
 	{
 		ft_putstr_c(YELLOW, elem->path);
 		ft_putstr_c(YELLOW, ":\n");
@@ -99,8 +100,19 @@ void	ft_show_path(t_env *env, t_elem *elem)
 
 void	ft_show_files(t_env *env, t_list *node)
 {
-	if (env->opt.a)
-		ft_lstiter(node, ft_show_name);
+	if (env->opt.l)
+	{
+		if (env->opt.a)
+			ft_lstiter(node, ft_show_name);
+		else
+			ft_lstiter_if(node, ft_show_name, reject_dot_folder);
+	}
 	else
-		ft_lstiter_if(node, ft_show_name, reject_dot_folder);
+	{
+		if (env->opt.a)
+			ft_lstiter(node, ft_show_detailled_name);
+		else
+			ft_lstiter_if(node, ft_show_detailled_name, reject_dot_folder);
+	}
+
 }
