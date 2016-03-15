@@ -60,3 +60,15 @@ char	*ft_get_right(mode_t st_mode)
 	right[9] = '\0';
 	return (right);
 }
+void	ft_get_max_width(void const *st, t_list *node)
+{
+	t_elem	*elem;
+	t_width	*w;
+
+	elem = (t_elem *)node->content;
+	w = (t_width *)st;
+	if (ft_nbrlen((int)elem->stat.st_nlink) > w->nb_nlink)
+		w->nb_nlink = ft_nbrlen((int)elem->stat.st_nlink);
+	if (ft_nbrlen((int)elem->stat.st_size) > w->nb_size)
+		w->nb_size = ft_nbrlen((int)elem->stat.st_size);
+}

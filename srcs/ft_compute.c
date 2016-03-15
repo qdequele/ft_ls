@@ -100,7 +100,13 @@ void	ft_show_path(t_env *env, t_elem *elem)
 
 void	ft_show_files(t_env *env, t_list *node)
 {
-	if (env->opt.l)
+	t_width	*w;
+
+	w = (t_width *)malloc(sizeof(t_width));
+	w->nb_nlink = 0;
+	w->nb_size = 0;
+	ft_lstiter_plus(node, (void const *)w, ft_get_max_width);
+	if (!env->opt.l)
 	{
 		if (env->opt.a)
 			ft_lstiter(node, ft_show_name);
@@ -110,9 +116,9 @@ void	ft_show_files(t_env *env, t_list *node)
 	else
 	{
 		if (env->opt.a)
-			ft_lstiter(node, ft_show_detailled_name);
+			ft_lstiter_plus(node, (void const *)w, ft_show_detailled_name);
 		else
-			ft_lstiter_if(node, ft_show_detailled_name, reject_dot_folder);
+			ft_lstiter_if_plus(node, (void const *)w, ft_show_detailled_name, reject_dot_folder);
 	}
 
 }

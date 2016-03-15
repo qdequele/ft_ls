@@ -68,18 +68,20 @@ void	ft_show_name(t_list *node)
 		ft_putstr("\n");
 	}
 }
-void	ft_show_detailled_name(t_list *node)
+void	ft_show_detailled_name(void const *wc, t_list *node)
 {
-	t_elem *elem;
+	t_elem	*elem;
+	t_width	*w;
 
+	w = (t_width *)wc;
 	elem = node->content;
-	printf("%c%s \t%d \t%s %s \t%d \t%s %s\n", 
-		elem->type, 
+	printf("%c%s  %s %s  %s  %s %s %s\n", 
+		elem->type,
 		ft_get_right(elem->stat.st_mode),
-		(int)elem->stat.st_nlink, 
-		ft_get_name(elem->stat.st_uid), 
-		ft_get_group(elem->stat.st_gid), 
-		(int)elem->stat.st_size, 
-		ft_get_time(elem->stat.st_mtime), 
+		ft_float_right_text(w->nb_nlink, ft_itoa((int)elem->stat.st_nlink)),
+		ft_get_name(elem->stat.st_uid),
+		ft_get_group(elem->stat.st_gid),
+		ft_float_right_text(w->nb_size, ft_itoa((int)elem->stat.st_size)),
+		ft_get_time(elem->stat.st_mtime),
 		elem->name);
 }

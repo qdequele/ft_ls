@@ -32,27 +32,27 @@ typedef struct		s_elem
 	char			type;
 }					t_elem;
 
-typedef struct		s_cwidth
+typedef struct		s_width
 {
-	int				nb_link;
+	int				nb_nlink;
 	int				nb_size;
-}					t_cwidth;
+}					t_width;
 
 typedef struct		s_opt
 {
-	int				l;//List with all atributes--
-	int				R;//Recursive -- OK
-	int				a;//include hidden file (.*) -- OK
-	int				r;//reverse sorting -- OK
-	int				t;//sort by last modification --
-	int				n;//remplace le nom et le groupe par l'UID et le GID -- OPT
-	int				c;//enable color -- OPT
-	int				i;//add inode to begening file -- OPT
-	int				h;//set the size of file readable -- OPT
-	int				F;//ajoute le type a la fin du nom du fichier -- OPT
-	int				L;//utiliser lstat au lieux de stat -- OPT
-	int				S;//sort by size -- OPT
-	int				T;//afficher completement la date -- OPT
+	int				l;
+	int				R;
+	int				a;
+	int				r;
+	int				t;
+	int				n;
+	int				c;
+	int				i;
+	int				h;
+	int				F;
+	int				L;
+	int				S;
+	int				T;
 	int				g;
 	int				m;
 	int				args;// nombres d'arguments -- OK
@@ -82,6 +82,7 @@ char				*ft_get_name(uid_t uid);
 char				*ft_get_group(gid_t gid);
 char				*ft_get_time(time_t timestamp);
 char				*ft_get_right(mode_t st_mode);
+void				ft_get_max_width(void const *st, t_list *node);
 //ft_ls.c
 void				ft_init_opt(t_env *env);
 void				ft_ls(int ac, char **av);
@@ -94,7 +95,7 @@ void				ft_parse_elems(t_env *env, char *str);
 void				ft_debug_t_opt(t_opt opt);
 void				ft_debug_elems(t_list *node);
 void				ft_show_name(t_list *node);
-void				ft_show_detailled_name(t_list *node);
+void				ft_show_detailled_name(void const *w, t_list *node);
 //ft_sort.c
 int					ft_sort_by_lexycography(t_list *node);
 int					ft_sort_by_lexycography_folder_end(t_list *node);
@@ -107,4 +108,5 @@ char				*ft_not_found_concat(char *str);
 t_elem				*ft_create_elem(char *str, char *prev_path);
 void				ft_free_elem(void *content, size_t size);
 int					reject_dot_folder(t_list *node);
+char				*ft_float_right_text(int width, char *str);
 #endif
