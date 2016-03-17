@@ -21,6 +21,7 @@
 # include <grp.h>
 # include <time.h>
 #include <stdio.h>
+# define SIX_MONTH (60*60*24*30*6)
 
 
 typedef struct		s_elem
@@ -40,6 +41,10 @@ typedef struct		s_width
 	size_t			major;
 	size_t			minor;
 	size_t			size;
+	size_t			sm;
+	size_t			total;
+	int				size_format;
+	int				mm_format;
 }					t_width;
 
 typedef struct		s_opt

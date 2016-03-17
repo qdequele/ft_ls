@@ -58,7 +58,7 @@ t_elem	*ft_create_elem(char *str, char *prev_path)
 			prev_path = ft_strjoin(prev_path, "/");
 		new_elem->path = ft_strjoin(prev_path, str);
 	}
-	new_elem->name = str;
+	new_elem->name = ft_strdup(str);
 	if (lstat(new_elem->path, &new_elem->stat) == -1)
 	{
 		new_elem->err = ft_not_found_concat(str);

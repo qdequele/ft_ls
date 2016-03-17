@@ -71,7 +71,7 @@ void	ft_show_size(t_width *w, t_elem	*elem)
 	{
 		size = ft_itoa((int)elem->stat.st_size);
 		if (w->size_format && w->mm_format)
-			ft_print(ft_float_right_text(w->sm, size), elem->type);
+			ft_print(ft_float_right_text(w->sm + 2, size), elem->type);
 		else
 			ft_print(ft_float_right_text(w->size, size), elem->type);
 	}
