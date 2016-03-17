@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ls.c                                            :+:      :+:    :+:   */
+/*   ft_iter.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qdequele <qdequele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/02 15:21:13 by qdequele          #+#    #+#             */
-/*   Updated: 2016/03/03 13:19:51 by qdequele         ###   ########.fr       */
+/*   Created: 2016/03/03 12:03:29 by qdequele          #+#    #+#             */
+/*   Updated: 2016/03/03 13:33:07 by qdequele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-int		main(int ac, char **av)
+void	ft_iter(t_list *node, void (*f)(t_list *elem))
 {
-	ft_ls(ac, av);
-	return (0);
+	if (g_options.a)
+		ft_lstiter(node, f);
+	else
+		ft_lstiter_if(node, f, reject_dot_folder);
 }
 
-void	ft_ls(int ac, char **av)
+void	ft_iter_plus(t_list *node, void const *param, void (*f)(void const *info, t_list *elem))
 {
-	t_env	*env;
-
-	if (!(env = (t_env *)malloc(sizeof(t_env))))
-		ft_memory_error();
-	env->lst = NULL;
-	ft_parser(env, ac, av);
-	if (g_options.h)
-		ft_show_help();
-	ft_lstiter_plus(env->lst, env, ft_compute);
+	if (g_options.a)
+		ft_lstiter_plus(node, param, f);
+	else
+		ft_lstiter_if_plus(node, param, f, reject_dot_folder);
 }

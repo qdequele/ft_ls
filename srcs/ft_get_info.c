@@ -12,7 +12,7 @@
 
 #include "ft_ls.h"
 
-char	*ft_get_name(uid_t uid)
+char	*ft_get_user(uid_t uid)
 {
 	struct passwd *result;
 
@@ -67,8 +67,16 @@ void	ft_get_max_width(void const *st, t_list *node)
 
 	elem = (t_elem *)node->content;
 	w = (t_width *)st;
-	if (ft_nbrlen((int)elem->stat.st_nlink) > w->nb_nlink)
-		w->nb_nlink = ft_nbrlen((int)elem->stat.st_nlink);
-	if (ft_nbrlen((int)elem->stat.st_size) > w->nb_size)
-		w->nb_size = ft_nbrlen((int)elem->stat.st_size);
+	if ((size_t)ft_nbrlen((int)elem->stat.st_nlink) > w->nlink)
+		w->nlink = ft_nbrlen((int)elem->stat.st_nlink);
+	if (ft_strlen(ft_get_user((int)elem->stat.st_uid)) > w->uid)
+		w->uid = ft_strlen(ft_get_user((int)elem->stat.st_uid));
+	if (ft_strlen(ft_get_group((int)elem->stat.st_gid)) > w->gid)
+		w->gid = ft_strlen(ft_get_group((int)elem->stat.st_gid));
+	if ((size_t)ft_nbrlen(major((int)elem->stat.st_rdev)) > w->major)
+		w->major = ft_nbrlen(major((int)elem->stat.st_rdev));
+	if ((size_t)ft_nbrlen(minor((int)elem->stat.st_rdev)) > w->minor)
+		w->minor = ft_nbrlen(minor((int)elem->stat.st_rdev));
+	if ((size_t)ft_nbrlen((int)elem->stat.st_size) > w->size)
+		w->size = ft_nbrlen((int)elem->stat.st_size);
 }

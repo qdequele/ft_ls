@@ -25,16 +25,16 @@ void	ft_compute(const void *ev, t_list *node)
 	else
 	{
 		((t_env *)ev)->first++;
-		ft_show_name(node);
+		ft_show_files(node);
 	}
 }
 
 void	ft_compute_dir(const void *ev, t_list *node)
 {
 	struct dirent	*pDirent;
-	DIR				*pDir;
-	t_list			*sub_lst;
-	t_elem			*elem;
+	DIR						*pDir;
+	t_list				*sub_lst;
+	t_elem				*elem;
 
 	elem = node->content;
 	if (elem->type == 'd')
@@ -47,23 +47,24 @@ void	ft_compute_dir(const void *ev, t_list *node)
 		while ((pDirent = readdir(pDir)) != NULL) {
 			ft_lstaddend(&sub_lst, ft_lstnew(ft_create_elem(pDirent->d_name, elem->path), sizeof(t_elem)));
 		}
+		if (pDir)
+			closedir (pDir);
 		ft_select_sort((t_env *)ev, &sub_lst);
-		ft_show_files((t_env *)ev, sub_lst);
-		if (((t_env *)ev)->opt.R)
+		ft_show_files(sub_lst);
+		if (g_options.R)
 			ft_lstiter_if_plus(sub_lst, ev, ft_compute_dir, reject_dot_folder);
-		closedir (pDir);
 	}
 }
 
 void	ft_select_sort(t_env *env, t_list **node)
 {
-	if (env->opt.t)
+	if (g_options.t)
 		ft_lst_bubble_sort(*node, ft_sort_by_modification_time);
 	else
 	{
 		if (env->has_files != 0 && env->first == 0)
 		{
-			if (env->opt.r)
+			if (g_options.r)
 			{
 				ft_lst_bubble_sort(*node, ft_sort_by_lexycography_folder_end_r);
 				return ;
@@ -76,49 +77,19 @@ void	ft_select_sort(t_env *env, t_list **node)
 		else
 			ft_lst_bubble_sort(*node, ft_sort_by_lexycography);
 	}
-	if (env->opt.r)
+	if (g_options.r)
 		ft_sort_reverse(node);
 }
 
-void	ft_show_path(t_env *env, t_elem *elem)
-{
-	if (env->first != 0)
-		ft_putstr("\n");
-	if ((strcmp(elem->path, ".") && env->opt.R && env->opt.args == 0))
-	{
-		ft_putstr_c(YELLOW, "./");
-		ft_putstr_c(YELLOW, elem->path);
-		ft_putstr_c(YELLOW, ":\n");
-	}
-	// else if(strcmp(elem->path, ".") && env->opt.args > 1)
-	else if(env->opt.args >= 1 && env->first++ != 0)
-	{
-		ft_putstr_c(YELLOW, elem->path);
-		ft_putstr_c(YELLOW, ":\n");
-	}
-}
-
-void	ft_show_files(t_env *env, t_list *node)
+void	ft_show_files(t_list *node)
 {
 	t_width	*w;
 
 	w = (t_width *)malloc(sizeof(t_width));
-	w->nb_nlink = 0;
-	w->nb_size = 0;
-	ft_lstiter_plus(node, (void const *)w, ft_get_max_width);
-	if (!env->opt.l)
-	{
-		if (env->opt.a)
-			ft_lstiter(node, ft_show_name);
-		else
-			ft_lstiter_if(node, ft_show_name, reject_dot_folder);
-	}
+	ft_init_width(w);
+	ft_iter_plus(node, (void const *)w, ft_get_max_width);
+	if (!g_options.l)
+			ft_iter(node, ft_show_name);
 	else
-	{
-		if (env->opt.a)
-			ft_lstiter_plus(node, (void const *)w, ft_show_detailled_name);
-		else
-			ft_lstiter_if_plus(node, (void const *)w, ft_show_detailled_name, reject_dot_folder);
-	}
-
+			ft_iter_plus(node, (void const *)w, ft_show_detailled_name);
 }

@@ -26,6 +26,8 @@ char	ft_get_type_of(struct stat stat)
 		return ('-');
 	if (S_ISLNK(stat.st_mode) == 1)
 		return ('l');
+	if (S_ISCHR(stat.st_mode) == 1)
+		return ('c');
 	else
 		return ('e');
 }
@@ -91,26 +93,4 @@ int		reject_dot_folder(t_list *node)
 	if (strncmp(elem->name, ".", 1) == 0)
 		return (0);
 	return (1);
-}
-
-char	*ft_float_right_text(int width, char *str)
-{
-	char	*new_str;
-	int		i;
-	int		j;
-
-	new_str = ft_strnew(width + 1);
-	if (ft_strlen(str) >= (size_t)width)
-		return (str);
-	else
-	{
-		i = 0;
-		j = 0;
-		while (i < (width - (int)ft_strlen(str)))
-			new_str[i++] = ' ';
-		while (i < width)
-			new_str[i++] = str[j++];
-		new_str[i] = '\0';
-	}
-	return (new_str);
 }

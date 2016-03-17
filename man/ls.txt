@@ -14,7 +14,7 @@ DESCRIPTION
      more than one operand is given, non-directory operands are displayed first; directory
      and non-directory operands are sorted separately and in lexicographical order.
 
-     The following options are available:
+     The following g_options are available:
 
      -1      (The numeric digit ``one''.)  Force output to be one entry per line.  This is
              the default when output is not to a terminal.
