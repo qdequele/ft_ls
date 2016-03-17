@@ -32,9 +32,9 @@ void	ft_compute(const void *ev, t_list *node)
 void	ft_compute_dir(const void *ev, t_list *node)
 {
 	struct dirent	*pDirent;
-	DIR						*pDir;
-	t_list				*sub_lst;
-	t_elem				*elem;
+	DIR				*pDir;
+	t_list			*sub_lst;
+	t_elem			*elem;
 
 	elem = node->content;
 	if (elem->type == 'd')
@@ -44,7 +44,8 @@ void	ft_compute_dir(const void *ev, t_list *node)
 		ft_show_path((t_env *)ev, elem);
 		if ((pDir = opendir (elem->path)) == NULL)
 			ft_not_found_exit(elem->path);
-		while ((pDirent = readdir(pDir)) != NULL) {
+		while ((pDirent = readdir(pDir)) != NULL)
+		{
 			ft_lstaddend(&sub_lst, ft_lstnew(ft_create_elem(pDirent->d_name, elem->path), sizeof(t_elem)));
 		}
 		if (pDir)
@@ -89,7 +90,12 @@ void	ft_show_files(t_list *node)
 	ft_init_width(w);
 	ft_iter_plus(node, (void const *)w, ft_get_max_width);
 	if (!g_options.l)
-			ft_iter(node, ft_show_name);
+		ft_iter(node, ft_show_name);
 	else
-			ft_iter_plus(node, (void const *)w, ft_show_detailled_name);
+	{
+		ft_putstr("total ");
+		ft_putnbr(w->total);
+		ft_putchar('\n');
+		ft_iter_plus(node, (void const *)w, ft_show_detailled_name);
+	}
 }

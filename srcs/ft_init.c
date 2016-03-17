@@ -42,4 +42,8 @@ void	ft_init_width(t_width *w)
 	w->minor = 0;
 	w->major = 0;
 	w->size = 0;
+	w->sm = 0;
+	w->total = 0;
+	w->size_format = 0;
+	w->mm_format = 0;
 }

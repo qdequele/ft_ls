@@ -60,14 +60,20 @@ void	ft_show_size(t_width *w, t_elem	*elem)
 	{
 		major = ft_itoa(major((int)elem->stat.st_rdev));
 		minor = ft_itoa(minor((int)elem->stat.st_rdev));
-		ft_print(ft_float_right_text(w->size, major), elem->type);
+		if (w->size_format && w->mm_format)
+			ft_print(ft_float_right_text((w->sm - w->minor), major), elem->type);
+		else
+			ft_print(ft_float_right_text(w->major, major), elem->type);
 		ft_print(", ", elem->type);
-		ft_print(ft_float_right_text(w->size, minor), elem->type);
+		ft_print(ft_float_right_text(w->minor, minor), elem->type);
 	}
 	else
 	{
 		size = ft_itoa((int)elem->stat.st_size);
-		ft_print(ft_float_right_text(w->size, size), elem->type);
+		if (w->size_format && w->mm_format)
+			ft_print(ft_float_right_text(w->sm, size), elem->type);
+		else
+			ft_print(ft_float_right_text(w->size, size), elem->type);
 	}
 }
 

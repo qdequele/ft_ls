@@ -67,6 +67,11 @@ void	ft_get_max_width(void const *st, t_list *node)
 
 	elem = (t_elem *)node->content;
 	w = (t_width *)st;
+	if (elem->type == 'c' || elem->type == 'b')
+		w->mm_format++;
+	else
+		w->size_format++;
+	w->total += (int)elem->stat.st_blocks;
 	if ((size_t)ft_nbrlen((int)elem->stat.st_nlink) > w->nlink)
 		w->nlink = ft_nbrlen((int)elem->stat.st_nlink);
 	if (ft_strlen(ft_get_user((int)elem->stat.st_uid)) > w->uid)
@@ -79,4 +84,10 @@ void	ft_get_max_width(void const *st, t_list *node)
 		w->minor = ft_nbrlen(minor((int)elem->stat.st_rdev));
 	if ((size_t)ft_nbrlen((int)elem->stat.st_size) > w->size)
 		w->size = ft_nbrlen((int)elem->stat.st_size);
+	if ((size_t)ft_nbrlen((int)elem->stat.st_size) > w->sm)
+		w->sm = ft_nbrlen((int)elem->stat.st_size);
+	if ((size_t)ft_nbrlen(major((int)elem->stat.st_rdev)) +
+		(size_t)ft_nbrlen(major((int)elem->stat.st_rdev)) + 2 > w->sm)
+		w->sm = (size_t)ft_nbrlen(major((int)elem->stat.st_rdev)) +
+				(size_t)ft_nbrlen(major((int)elem->stat.st_rdev)) + 2;
 }
