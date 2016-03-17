@@ -21,7 +21,6 @@
 # include <grp.h>
 # include <time.h>
 #include <stdio.h>
-# define SIX_MONTH (60*60*24*30*6)
 
 
 typedef struct		s_elem
