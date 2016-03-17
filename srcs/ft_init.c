@@ -19,16 +19,8 @@ void	ft_init_opt(t_env *env)
 	g_options.a = 0;
 	g_options.r = 0;
 	g_options.t = 0;
-	g_options.n = 0;
 	g_options.c = 0;
-	g_options.i = 0;
 	g_options.h = 0;
-	g_options.F = 0;
-	g_options.L = 0;
-	g_options.S = 0;
-	g_options.T = 0;
-	g_options.g = 0;
-	g_options.m = 0;
 	g_options.args = 0;
 	env->first = 0;
 	env->has_files = 0;

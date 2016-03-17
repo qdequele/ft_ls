@@ -89,6 +89,7 @@ void	ft_show_files(t_list *node)
 	w = (t_width *)malloc(sizeof(t_width));
 	ft_init_width(w);
 	ft_iter_plus(node, (void const *)w, ft_get_max_width);
+	printf("toto\n");
 	if (!g_options.l)
 		ft_iter(node, ft_show_name);
 	else

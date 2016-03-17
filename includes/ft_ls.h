@@ -54,16 +54,8 @@ typedef struct		s_opt
 	int				a;
 	int				r;
 	int				t;
-	int				n;
 	int				c;
-	int				i;
 	int				h;
-	int				F;
-	int				L;
-	int				S;
-	int				T;
-	int				g;
-	int				m;
 	int				args;
 }					t_opt;
 
@@ -108,6 +100,7 @@ char				*ft_get_group(gid_t gid);
 char				*ft_get_time(time_t timestamp);
 char				*ft_get_right(mode_t st_mode);
 void				ft_get_max_width(void const *st, t_list *node);
+void				ft_get_linked_name(t_elem *elem);
 /*
 ** ft_init.c
 */

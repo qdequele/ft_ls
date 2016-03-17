@@ -60,13 +60,11 @@ t_elem	*ft_create_elem(char *str, char *prev_path)
 	}
 	new_elem->name = ft_strdup(str);
 	if (lstat(new_elem->path, &new_elem->stat) == -1)
-	{
 		new_elem->err = ft_not_found_concat(str);
-	}
 	else
-	{
 		new_elem->type = ft_get_type_of(new_elem->stat);
-	}
+	if (g_options.l && new_elem->type == 'l')
+		ft_get_linked_name(new_elem);
 	return (new_elem);
 }
 
