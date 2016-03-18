@@ -75,8 +75,8 @@ char	*ft_get_right(mode_t st_mode)
 	right[6] = (st_mode & S_IROTH)? 'r' : '-';
 	right[7] = (st_mode & S_IWOTH)? 'w' : '-';
 	right[8] = (st_mode & S_IXOTH)? 'x' : '-';
-	right[8] = (st_mode & S_ISVTX)? 'T' : right[8];
-	right[8] = (st_mode & S_ISVTX & S_IXOTH)? 't' : right[8];
+	right[8] = (st_mode & S_ISVTX)? 't' : right[8];
+	right[8] = (st_mode & S_ISVTX & S_IXOTH)? 'T' : right[8];
 	right[9] = '\0';
 	return (right);
 }

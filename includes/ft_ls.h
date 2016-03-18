@@ -58,7 +58,7 @@ typedef struct		s_opt
 	int				args;
 }					t_opt;
 
-t_opt	g_options;
+t_opt				g_options;
 
 typedef struct		s_env
 {
@@ -88,6 +88,7 @@ void				ft_debug_elems(t_list *node);
 ** ft_exit.c
 */
 void				ft_not_found_exit(char *str);
+void				ft_nill_not_found_exit();
 void				ft_illegal_option_exit(char c);
 void				ft_memory_error();
 void				ft_show_help();

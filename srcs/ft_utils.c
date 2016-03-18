@@ -16,8 +16,6 @@ char	ft_get_type_of(struct stat stat)
 {
 	if (S_ISBLK(stat.st_mode) == 1)
 		return ('b');
-	if (S_ISCHR(stat.st_mode) == 1)
-		return ('c');
 	if (S_ISDIR(stat.st_mode) == 1)
 		return ('d');
 	if (S_ISFIFO(stat.st_mode) == 1)
@@ -28,6 +26,8 @@ char	ft_get_type_of(struct stat stat)
 		return ('l');
 	if (S_ISCHR(stat.st_mode) == 1)
 		return ('c');
+	if (S_ISSOCK(stat.st_mode) == 1)
+		return ('s');
 	else
 		return ('e');
 }

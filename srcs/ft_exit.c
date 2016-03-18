@@ -20,6 +20,13 @@ void	ft_not_found_exit(char *str)
 	//exit(0);
 }
 
+void	ft_nill_not_found_exit()
+{
+	ft_putstr("ls: fts_open: No such file or directory\n");
+	exit(0);
+}
+
+
 void	ft_illegal_option_exit(char c)
 {
 	ft_putstr_fd("ls: illegal option -- ", 2);
