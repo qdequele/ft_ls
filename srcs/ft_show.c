@@ -18,9 +18,13 @@ void	ft_show_name(t_list *node)
 
 	elem = node->content;
 	if (elem->err)
+	{
 		ft_printendl(elem->err, 'e');
+	}
 	else
+	{
 		ft_printendl(elem->name, elem->type);
+	}
 }
 
 void	ft_show_path(t_env *env, t_elem *elem)

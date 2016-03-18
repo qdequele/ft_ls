@@ -20,8 +20,6 @@
 # include <pwd.h>
 # include <grp.h>
 # include <time.h>
-#include <stdio.h>
-
 
 typedef struct		s_elem
 {

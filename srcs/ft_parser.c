@@ -20,7 +20,12 @@ void	ft_parser(t_env *env, int ac, char **av)
 	i = 1;
 	while (i < ac && av[i] && av[i][0] =='-')
 	{
-		if ((av[i][0] =='-' && !av[i][1]) || (av[i][0] =='-' && av[i][1] == '-' && !av[i][2]))
+		if (av[i][0] =='-' && av[i][1] == '-' && !av[i][2])
+		{
+			i++;
+			break;
+		}
+		if ((av[i][0] =='-' && !av[i][1]))
 			break;
 		else if (av[i][0] =='-' && av[i][1] == '-' && av[i][2] )
 			ft_illegal_option_exit('-');

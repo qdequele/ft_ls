@@ -25,7 +25,10 @@ void	ft_compute(const void *ev, t_list *node)
 	else
 	{
 		((t_env *)ev)->first++;
-		ft_show_files(node);
+		if (ft_strlen(elem->err) != 0)
+			ft_show_name(node);
+		else
+			ft_show_files(node);
 	}
 }
 
@@ -54,6 +57,7 @@ void	ft_compute_dir(const void *ev, t_list *node)
 		ft_show_files(sub_lst);
 		if (g_options.R)
 			ft_lstiter_if_plus(sub_lst, ev, ft_compute_dir, reject_dot_folder);
+		ft_lstdel(&sub_lst, ft_free_elem);
 	}
 }
 
@@ -89,12 +93,10 @@ void	ft_show_files(t_list *node)
 	w = (t_width *)malloc(sizeof(t_width));
 	ft_init_width(w);
 	ft_iter_plus(node, (void const *)w, ft_get_max_width);
-	printf("toto\n");
 	if (!g_options.l)
 		ft_iter(node, ft_show_name);
 	else
 	{
-		ft_putstr("total ");
 		ft_putnbr(w->total);
 		ft_putchar('\n');
 		ft_iter_plus(node, (void const *)w, ft_show_detailled_name);

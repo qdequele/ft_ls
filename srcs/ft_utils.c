@@ -74,13 +74,14 @@ void	ft_free_elem(void *content, size_t size)
 
 	size = 0;
 	elem = (t_elem*)content;
-	if (elem->name)
+	if (elem && elem->name)
 		free(elem->name);
-	if (elem->path)
+	if (elem && elem->path)
 		free(elem->path);
-	if (elem->err)
-		free(elem->err);
-	free(elem);
+	// if (elem && elem->err)
+	// 	free(elem->err);
+	if (elem)
+		free(elem);
 }
 
 int		reject_dot_folder(t_list *node)
