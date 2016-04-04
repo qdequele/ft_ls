@@ -92,24 +92,14 @@ void	ft_get_max_width(void const *st, t_list *node)
 	else
 		w->size_format++;
 	w->total += (int)elem->stat.st_blocks;
-	if ((size_t)ft_nbrlen((int)elem->stat.st_nlink) > w->nlink)
-		w->nlink = ft_nbrlen((int)elem->stat.st_nlink);
-	if (ft_strlen(ft_get_user((int)elem->stat.st_uid)) > w->uid)
-		w->uid = ft_strlen(ft_get_user((int)elem->stat.st_uid));
-	if (ft_strlen(ft_get_group((int)elem->stat.st_gid)) > w->gid)
-		w->gid = ft_strlen(ft_get_group((int)elem->stat.st_gid));
-	if ((size_t)ft_nbrlen(major((int)elem->stat.st_rdev)) > w->major)
-		w->major = ft_nbrlen(major((int)elem->stat.st_rdev));
-	if ((size_t)ft_nbrlen(minor((int)elem->stat.st_rdev)) > w->minor)
-		w->minor = ft_nbrlen(minor((int)elem->stat.st_rdev));
-	if ((size_t)ft_nbrlen((int)elem->stat.st_size) > w->size)
-		w->size = ft_nbrlen((int)elem->stat.st_size);
-	if ((size_t)ft_nbrlen((int)elem->stat.st_size) > w->sm)
-		w->sm = ft_nbrlen((int)elem->stat.st_size);
-	if ((size_t)ft_nbrlen(major((int)elem->stat.st_rdev)) +
-		(size_t)ft_nbrlen(major((int)elem->stat.st_rdev)) + 2 > w->sm)
-		w->sm = (size_t)ft_nbrlen(major((int)elem->stat.st_rdev)) +
-				(size_t)ft_nbrlen(major((int)elem->stat.st_rdev)) + 2;
+	ft_get_max_nlink(w, elem->stat);
+	ft_get_max_uid(w, elem->stat);
+	ft_get_max_gid(w, elem->stat);
+	ft_get_max_major(w, elem->stat);
+	ft_get_max_minor(w, elem->stat);
+	ft_get_max_size(w, elem->stat);
+	ft_get_max_sm(w, elem->stat);
+
 }
 
 void	ft_get_linked_name(t_elem *elem)

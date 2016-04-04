@@ -50,7 +50,7 @@ t_elem	*ft_create_elem(char *str, char *prev_path)
 		ft_memory_error();
 	if (!(new_elem->path = malloc(sizeof(char) * (ft_strlen(str) + ft_strlen(prev_path) + 1))))
 		ft_memory_error();
-	if (strcmp(prev_path, ".") == 0)
+	if (ft_strcmp(prev_path, ".") == 0)
 		new_elem->path = str;
 	else
 	{
@@ -78,8 +78,8 @@ void	ft_free_elem(void *content, size_t size)
 		free(elem->name);
 	if (elem && elem->path)
 		free(elem->path);
-	// if (elem && elem->err)
-	// 	free(elem->err);
+	//if (elem && elem->err)
+	//	free(elem->err);
 	if (elem)
 		free(elem);
 }
@@ -89,7 +89,7 @@ int		reject_dot_folder(t_list *node)
 	t_elem	*elem;
 
 	elem = node->content;
-	if (strncmp(elem->name, ".", 1) == 0)
+	if (ft_strncmp(elem->name, ".", 1) == 0)
 		return (0);
 	return (1);
 }

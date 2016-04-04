@@ -12,18 +12,19 @@
 
 #Define the program
 NAME		= ft_ls
-_SRC		= 	ft_align.c\
+_SRC		= 	ft_get/ft_get_max.c\
+				ft_get/ft_get_info.c\
+				ft_show/ft_print.c\
+				ft_show/ft_show.c\
+				ft_show/ft_show_long.c\
+				ft_show/ft_debug.c\
+				ft_show/ft_exit.c\
+				ft_align.c\
 				ft_compute.c\
-				ft_debug.c\
-				ft_exit.c\
-				ft_get_info.c\
 				ft_init.c\
 				ft_iter.c\
 				ft_ls.c\
 				ft_parser.c\
-				ft_print.c\
-				ft_show.c\
-				ft_show_long.c\
 				ft_sort.c\
 				ft_utils.c
 SRC			= $(addprefix srcs/,$(_SRC))

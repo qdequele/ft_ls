@@ -46,18 +46,24 @@ void	ft_compute_dir(const void *ev, t_list *node)
 		pDir = NULL;
 		ft_show_path((t_env *)ev, elem);
 		if ((pDir = opendir (elem->path)) == NULL)
-			ft_not_found_exit(elem->path);
-		while ((pDirent = readdir(pDir)) != NULL)
 		{
-			ft_lstaddend(&sub_lst, ft_lstnew(ft_create_elem(pDirent->d_name, elem->path), sizeof(t_elem)));
+			ft_not_found_exit(elem->path);
+			return ;
 		}
 		if (pDir)
+		{
+			while ((pDirent = readdir(pDir)) != NULL)
+			{
+				ft_lstaddend(&sub_lst, ft_lstnew(ft_create_elem(pDirent->d_name, elem->path), sizeof(t_elem)));
+			}
 			closedir (pDir);
-		ft_select_sort((t_env *)ev, &sub_lst);
-		ft_show_files(sub_lst);
-		if (g_options.R)
-			ft_lstiter_if_plus(sub_lst, ev, ft_compute_dir, reject_dot_folder);
-		ft_lstdel(&sub_lst, ft_free_elem);
+			ft_select_sort((t_env *)ev, &sub_lst);
+			ft_show_files(sub_lst);
+			if (g_options.R)
+				ft_lstiter_if_plus(sub_lst, ev, ft_compute_dir, reject_dot_folder);
+			ft_lstdel(&sub_lst, ft_free_elem);
+		}
+		
 	}
 }
 

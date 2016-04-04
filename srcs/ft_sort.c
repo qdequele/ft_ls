@@ -19,7 +19,7 @@ int		ft_sort_by_lexycography(t_list *node)
 
 	elem = node->content;
 	next = node->next->content;
-	if (next && strcmp(elem->name, next->name) > 0)
+	if (next && ft_strcmp(elem->name, next->name) > 0)
 		return (1);
 	return (0);
 }
@@ -33,7 +33,7 @@ int		ft_sort_by_lexycography_folder_end(t_list *node)
 	next = node->next->content;
 	if (next && (elem->type != 'd' && next->type == 'd'))
 		return (0);
-	if (next && ((strcmp(elem->name, next->name) > 0) || (elem->type == 'd' && next->type != 'd')))
+	if (next && ((ft_strcmp(elem->name, next->name) > 0) || (elem->type == 'd' && next->type != 'd')))
 		return (1);
 	return (0);
 }
@@ -46,7 +46,7 @@ int		ft_sort_by_lexycography_folder_end_r(t_list *node)
 	next = node->next->content;
 	if (next && (elem->type != 'd' && next->type == 'd'))
 		return (0);
-	if (next && ((strcmp(elem->name, next->name) < 0) || (elem->type == 'd' && next->type != 'd')))
+	if (next && ((ft_strcmp(elem->name, next->name) < 0) || (elem->type == 'd' && next->type != 'd')))
 		return (1);
 	return (0);
 }

@@ -65,6 +65,17 @@ typedef struct		s_env
 	int				has_files;
 }					t_env;
 
+
+/*
+** ft_get_max.c
+*/
+void				ft_get_max_nlink(t_width *w, struct stat stat);
+void				ft_get_max_uid(t_width *w, struct stat stat);
+void				ft_get_max_gid(t_width *w, struct stat stat);
+void				ft_get_max_major(t_width *w, struct stat stat);
+void				ft_get_max_minor(t_width *w, struct stat stat);
+void				ft_get_max_size(t_width *w, struct stat stat);
+void				ft_get_max_sm(t_width *w, struct stat stat);
 /*
 ** ft_align.c
 */

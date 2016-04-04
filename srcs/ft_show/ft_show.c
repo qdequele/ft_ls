@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print.c                                         :+:      :+:    :+:   */
+/*   ft_show.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qdequele <qdequele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,42 +12,35 @@
 
 #include "ft_ls.h"
 
-void	ft_print(char *str, char type)
+void	ft_show_name(t_list *node)
 {
-	if (g_options.c && type)
+	t_elem *elem;
+
+	elem = node->content;
+	if (elem->err)
 	{
-		if (type == 'd')
-			ft_putstr_c(CYAN, str);
-		else if (type == 'p')
-			ft_putstr_c(YELLOW, str);
-		else if (type == 'e')
-			ft_putstr_c(RED, str);
-		else
-			ft_putstr(str);
+		ft_printendl(elem->err, 'e');
 	}
-	else
-		ft_putstr(str);
+	else if (elem->name && elem->type)
+	{
+		ft_printendl(elem->name, elem->type);
+	}
 }
 
-void	ft_printendl(char *str, char type)
+void	ft_show_path(t_env *env, t_elem *elem)
 {
-	ft_print(str, type);
-	ft_putchar('\n');
-}
-
-void	ft_print_c(char c, char type)
-{
-	if (g_options.c && type)
+	if (env->first != 0)
+		ft_putstr("\n");
+	if ((ft_strcmp(elem->path, ".") && g_options.R && g_options.args == 0))
 	{
-		if (type == 'd')
-			ft_putchar_c(CYAN, c);
-		else if (type == 'p')
-			ft_putchar_c(YELLOW, c);
-		else if (type == 'e')
-			ft_putchar_c(RED, c);
-		else
-			ft_putchar(c);
+		ft_print("./", 'p');
+		ft_print(elem->path, 'p');
+		ft_print(":\n", 'p');
 	}
-	else
-		ft_putchar(c);
+	else if(g_options.args >= 1 && env->first != 0)
+	{
+		ft_print(elem->path, 'p');
+		ft_print(":\n", 'p');
+	}
+	env->first++;
 }
