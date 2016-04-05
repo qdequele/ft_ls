@@ -28,7 +28,7 @@ _SRC		= 	ft_get/ft_get_max.c\
 				ft_sort.c\
 				ft_utils.c
 SRC			= $(addprefix srcs/,$(_SRC))
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror -g -ggdb
 LIBFT		= -Llibft -lft -Ilibft
 
 all: $(NAME)

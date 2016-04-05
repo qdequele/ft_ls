@@ -25,7 +25,7 @@ void	ft_print(char *str, char type)
 		else
 			ft_putstr(str);
 	}
-	else if (str)
+	else
 		ft_putstr(str);
 }
 
