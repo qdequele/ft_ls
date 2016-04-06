@@ -20,6 +20,7 @@
 # include <pwd.h>
 # include <grp.h>
 # include <time.h>
+# include <errno.h>
 
 typedef struct		s_elem
 {
@@ -161,8 +162,8 @@ int					ft_sort_reverse(t_list **node);
 ** ft_utils.c
 */
 char				ft_get_type_of(struct stat stat);
-char				*ft_not_found_concat(char *str);
+char				*ft_errno(char *str);
 t_elem				*ft_create_elem(char *str, char *prev_path);
-void				ft_free_elem(void *content, size_t size);
+//void				ft_free_elem(void *content, size_t size);
 int					reject_dot_folder(t_list *node);
 #endif

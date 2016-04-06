@@ -61,7 +61,7 @@ char	*ft_get_right(mode_t st_mode)
 {
 	char 	*right;
 
-	right = (char *)malloc(sizeof(char) * 10);
+	right = ft_memalloc(sizeof(char) * 10);
 	right[0] = (st_mode & S_IRUSR)? 'r' : '-';
 	right[1] = (st_mode & S_IWUSR)? 'w' : '-';
 	right[2] = (st_mode & S_IXUSR)? 'x' : '-';
@@ -107,7 +107,7 @@ void	ft_get_linked_name(t_elem *elem)
 	char	*linkname;
 	ssize_t	size;
 
-	linkname = (char *)malloc(sizeof(char) * 256);
+	linkname = ft_memalloc(sizeof(char) * 256);
 	size = readlink(elem->path, linkname, 256);
 	linkname[size] = '\0';
 	if (size > 0)

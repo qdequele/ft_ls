@@ -58,9 +58,12 @@ int		ft_sort_by_modification_time(t_list *node)
 
 	elem = node->content;
 	n_elem = node->next->content;
-	if (n_elem && elem->stat.st_mtime < n_elem->stat.st_mtime)
+	if (n_elem && elem->stat.st_mtime == n_elem->stat.st_mtime && elem->stat.st_mtimespec.tv_nsec < n_elem->stat.st_mtimespec.tv_nsec)
 		return (1);
-	return (0);
+	else if (n_elem && elem->stat.st_mtime < n_elem->stat.st_mtime)
+		return (1);
+	else
+		return (0);
 }
 //-r
 int		ft_sort_reverse(t_list **node)

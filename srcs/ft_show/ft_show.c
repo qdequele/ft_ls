@@ -37,7 +37,7 @@ void	ft_show_path(t_env *env, t_elem *elem)
 		ft_print(elem->path, 'p');
 		ft_print(":\n", 'p');
 	}
-	else if(g_options.args >= 1 && env->first != 0)
+	else if(g_options.args >= 1 && (env->first != 0 || env->has_files != 0))
 	{
 		ft_print(elem->path, 'p');
 		ft_print(":\n", 'p');

@@ -16,7 +16,12 @@ void	ft_not_found_exit(char *str)
 {
 	ft_putstr("ls: ");
 	ft_putstr(str);
-	ft_putstr(": No such file or directory\n");
+	ft_putstr(": ");
+	if (errno != 0)
+		ft_putstr(strerror(errno));
+	else
+		ft_putstr("No such file or directory");
+	ft_putstr("\n");
 	//exit(0);
 }
 

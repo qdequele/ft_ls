@@ -61,7 +61,7 @@ void	ft_compute_dir(const void *ev, t_list *node)
 			ft_show_files(sub_lst);
 			if (g_options.R)
 				ft_lstiter_if_plus(sub_lst, ev, ft_compute_dir, reject_dot_folder);
-			ft_lstdel(&sub_lst, ft_free_elem);
+			//ft_lstdel(&sub_lst, ft_free_elem);
 		}
 		
 	}
@@ -96,13 +96,14 @@ void	ft_show_files(t_list *node)
 {
 	t_width	*w;
 
-	w = (t_width *)malloc(sizeof(t_width));
+	w = (t_width *)ft_memalloc(sizeof(t_width));
 	ft_init_width(w);
 	ft_iter_plus(node, (void const *)w, ft_get_max_width);
 	if (!g_options.l)
 		ft_iter(node, ft_show_name);
 	else
 	{
+		ft_putstr("total ");
 		ft_putnbr(w->total);
 		ft_putchar('\n');
 		ft_iter_plus(node, (void const *)w, ft_show_detailled_name);

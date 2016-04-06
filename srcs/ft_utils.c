@@ -32,13 +32,15 @@ char	ft_get_type_of(struct stat stat)
 		return ('e');
 }
 
-char	*ft_not_found_concat(char *str)
+char	*ft_errno(char *str)
 {
 	char	*err;
-	err = malloc(sizeof(char) * (ft_strlen(str) + 32));
+
+	err = ft_memalloc(sizeof(char) * (ft_strlen(str) + ft_strlen(strerror(errno))));
 	ft_strcat(err, "ls: ");
-	ft_strcat(err, str);
-	ft_strcat(err, ": No such file or directory");
+	ft_strcat(err, ft_strdup(str));
+	ft_strcat(err, ": ");
+	ft_strcat(err, strerror(errno));
 	return (err);
 }
 
@@ -46,21 +48,19 @@ t_elem	*ft_create_elem(char *str, char *prev_path)
 {
 	t_elem	*new_elem;
 
-	if (!(new_elem = malloc(sizeof(t_elem))))
-		ft_memory_error();
-	if (!(new_elem->path = malloc(sizeof(char) * (ft_strlen(str) + ft_strlen(prev_path) + 1))))
-		ft_memory_error();
+	new_elem = ft_memalloc(sizeof(t_elem));
+	new_elem->path = ft_memalloc(sizeof(char) * (ft_strlen(str) + ft_strlen(prev_path) + 1));
 	if (ft_strcmp(prev_path, ".") == 0)
-		new_elem->path = str;
+		new_elem->path = ft_strdup(str);
 	else
 	{
 		if (ft_strlen(prev_path) > 0)
-			prev_path = ft_strjoin(prev_path, "/");
-		new_elem->path = ft_strjoin(prev_path, str);
+			prev_path = ft_strfjoin(ft_strdup(prev_path), "/");
+		new_elem->path = ft_strfjoin(ft_strdup(prev_path), ft_strdup(str));
 	}
 	new_elem->name = ft_strdup(str);
 	if (lstat(new_elem->path, &new_elem->stat) == -1)
-		new_elem->err = ft_not_found_concat(str);
+		new_elem->err = ft_errno(str);
 	else
 		new_elem->type = ft_get_type_of(new_elem->stat);
 	if (g_options.l && new_elem->type == 'l')
@@ -68,21 +68,21 @@ t_elem	*ft_create_elem(char *str, char *prev_path)
 	return (new_elem);
 }
 
-void	ft_free_elem(void *content, size_t size)
-{
-	t_elem	*elem;
+// void	ft_free_elem(void *content, size_t size)
+// {
+// 	t_elem	*elem;
 
-	size = 0;
-	elem = (t_elem*)content;
-	if (elem && elem->name)
-		free(elem->name);
-	if (elem && elem->path)
-		free(elem->path);
-	//if (elem && elem->err)
-	//	free(elem->err);
-	if (elem)
-		free(elem);
-}
+// 	size = 0;
+// 	elem = (t_elem*)content;
+// 	if (elem && elem->name)
+// 		free(elem->name);
+// 	if (elem && elem->path)
+// 		free(elem->path);
+// 	if (elem && elem->err)
+// 		free(elem->err);
+// 	if (elem)
+// 		free(elem);
+// }
 
 int		reject_dot_folder(t_list *node)
 {
