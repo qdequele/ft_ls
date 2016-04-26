@@ -20,12 +20,12 @@ void	ft_compute(const void *ev, t_list *node)
 	elem = node->content;
 	if (elem->type == 'd')
 	{
+		((t_env *)ev)->first++;
 		ft_compute_dir(ev, node);
 	}
 	else
 	{
-		((t_env *)ev)->first++;
-		if (ft_strlen(elem->err) != 0)
+		if (!elem->err || ft_strlen(elem->err) != 0)
 			ft_show_name(node);
 		else
 			ft_show_files(node);
@@ -61,9 +61,11 @@ void	ft_compute_dir(const void *ev, t_list *node)
 			ft_show_files(sub_lst);
 			if (g_options.R)
 				ft_lstiter_if_plus(sub_lst, ev, ft_compute_dir, reject_dot_folder);
-			//ft_lstdel(&sub_lst, ft_free_elem);
 		}
 		
+	}
+	else {
+		g_options.err = 0;
 	}
 }
 
@@ -81,9 +83,7 @@ void	ft_select_sort(t_env *env, t_list **node)
 				return ;
 			}
 			else
-			{
 				ft_lst_bubble_sort(*node, ft_sort_by_lexycography_folder_end);
-			}
 		}
 		else
 			ft_lst_bubble_sort(*node, ft_sort_by_lexycography);

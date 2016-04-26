@@ -27,7 +27,7 @@ void	ft_parser(t_env *env, int ac, char **av)
 		}
 		if ((av[i][0] =='-' && !av[i][1]))
 			break;
-		else if (av[i][0] =='-' && av[i][1] == '-' && av[i][2] )
+		else if (av[i][0] =='-' && av[i][1] == '-' && av[i][2])
 			ft_illegal_option_exit('-');
 		else if (av[i][0] =='-' && av[i][1])
 			ft_parse_options(env, av[i]);
@@ -61,19 +61,24 @@ void	ft_parse_option(t_env *env, char c)
 {
 	env = (t_env *)env;
 	if (c == 'l')
-		g_options.l  = 1;
+		g_options.l = 1;
 	else if (c == 'R')
-		g_options.R  = 1;
+		g_options.R = 1;
 	else if (c == 'a')
-		g_options.a  = 1;
+		g_options.a = 1;
 	else if (c == 'r')
-		g_options.r  = 1;
+		g_options.r = 1;
 	else if (c == 't')
-		g_options.t  = 1;
+		g_options.t = 1;
 	else if (c == 'c')
-		g_options.c  = 1;
+		g_options.c = 1;
 	else if (c == 'h')
-		g_options.h  = 1;
+		g_options.h = 1;
+	else if (c == '1')
+	{
+		g_options.one = 1;
+		g_options.l = 0;
+	}
 	else
 		ft_illegal_option_exit(c);
 }

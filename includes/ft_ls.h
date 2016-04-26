@@ -22,6 +22,10 @@
 # include <time.h>
 # include <errno.h>
 
+
+
+#include <stdio.h>
+
 typedef struct		s_elem
 {
 	struct stat		stat;
@@ -54,7 +58,10 @@ typedef struct		s_opt
 	int				t;
 	int				c;
 	int				h;
+	int				one;
 	int				args;
+	int				err;
+	int				lines;
 }					t_opt;
 
 t_opt				g_options;

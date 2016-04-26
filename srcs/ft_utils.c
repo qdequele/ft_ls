@@ -40,7 +40,8 @@ char	*ft_errno(char *str)
 	ft_strcat(err, "ls: ");
 	ft_strcat(err, ft_strdup(str));
 	ft_strcat(err, ": ");
-	ft_strcat(err, strerror(errno));
+	ft_strcat(err, ft_strdup(strerror(errno)));
+	g_options.err++;
 	return (err);
 }
 
@@ -60,29 +61,16 @@ t_elem	*ft_create_elem(char *str, char *prev_path)
 	}
 	new_elem->name = ft_strdup(str);
 	if (lstat(new_elem->path, &new_elem->stat) == -1)
-		new_elem->err = ft_errno(str);
+	{
+		//new_elem->err = ft_errno(str);
+		ft_not_found_exit(str);
+	}
 	else
 		new_elem->type = ft_get_type_of(new_elem->stat);
 	if (g_options.l && new_elem->type == 'l')
 		ft_get_linked_name(new_elem);
 	return (new_elem);
 }
-
-// void	ft_free_elem(void *content, size_t size)
-// {
-// 	t_elem	*elem;
-
-// 	size = 0;
-// 	elem = (t_elem*)content;
-// 	if (elem && elem->name)
-// 		free(elem->name);
-// 	if (elem && elem->path)
-// 		free(elem->path);
-// 	if (elem && elem->err)
-// 		free(elem->err);
-// 	if (elem)
-// 		free(elem);
-// }
 
 int		reject_dot_folder(t_list *node)
 {

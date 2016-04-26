@@ -27,6 +27,8 @@ void	ft_print(char *str, char type)
 	}
 	else
 		ft_putstr(str);
+	if (type && type != 'e')
+		g_options.lines++;
 }
 
 void	ft_printendl(char *str, char type)

@@ -36,7 +36,7 @@ char	*ft_get_time(time_t timestamp)
 	tmp_time = ctime(&timestamp);
 	str_time = ft_strnew(12);
 	i = 0;
-	if ((time(NULL) - timestamp) < 15552000)
+	if (((time(NULL) - timestamp) < 15552000) && (timestamp < time(NULL) + 15552000))
 		while(i < 12)
 		{
 			str_time[i] = tmp_time[i + 4];
@@ -66,17 +66,17 @@ char	*ft_get_right(mode_t st_mode)
 	right[1] = (st_mode & S_IWUSR)? 'w' : '-';
 	right[2] = (st_mode & S_IXUSR)? 'x' : '-';
 	right[2] = (st_mode & S_ISUID)? 'S' : right[2];
-	right[2] = (st_mode & S_ISUID & S_IEXEC)? 's' : right[2];
+	right[2] = ((st_mode & S_ISUID) && (st_mode & S_IXUSR))? 's' : right[2];
 	right[3] = (st_mode & S_IRGRP)? 'r' : '-';
 	right[4] = (st_mode & S_IWGRP)? 'w' : '-';
 	right[5] = (st_mode & S_IXGRP)? 'x' : '-';
 	right[5] = (st_mode & S_ISGID)? 'S' : right[5];
-	right[5] = (st_mode & S_ISGID & S_IXGRP)? 's' : right[5];
+	right[5] = ((st_mode & S_ISGID) && (st_mode & S_IXGRP))? 's' : right[5];
 	right[6] = (st_mode & S_IROTH)? 'r' : '-';
 	right[7] = (st_mode & S_IWOTH)? 'w' : '-';
 	right[8] = (st_mode & S_IXOTH)? 'x' : '-';
-	right[8] = (st_mode & S_ISVTX)? 't' : right[8];
-	right[8] = (st_mode & S_ISVTX & S_IXOTH)? 'T' : right[8];
+	right[8] = (st_mode & S_ISVTX)? 'T' : right[8];
+	right[8] = ((st_mode & S_ISVTX) && (st_mode & S_IXOTH))? 't' : right[8];
 	right[9] = '\0';
 	return (right);
 }

@@ -29,15 +29,20 @@ void	ft_show_name(t_list *node)
 
 void	ft_show_path(t_env *env, t_elem *elem)
 {
-	if (env->first != 0)
+	//printf("first : %d | lines : %d\n", env->first, g_options.lines);
+	if (g_options.lines != 0)
+	{
 		ft_putstr("\n");
+	}
+	if (g_options.args > 1 && env->has_files == 0)
+		env->first++;
 	if ((ft_strcmp(elem->path, ".") && g_options.R && g_options.args == 0))
 	{
 		ft_print("./", 'p');
 		ft_print(elem->path, 'p');
 		ft_print(":\n", 'p');
 	}
-	else if(g_options.args >= 1 && (env->first != 0 || env->has_files != 0))
+	else if(g_options.args > 1 && (env->first != 0 || env->has_files != 0))
 	{
 		ft_print(elem->path, 'p');
 		ft_print(":\n", 'p');

@@ -21,9 +21,12 @@ void	ft_init_opt(t_env *env)
 	g_options.t = 0;
 	g_options.c = 0;
 	g_options.h = 0;
+	g_options.one = 0;
 	g_options.args = 0;
 	env->first = 0;
 	env->has_files = 0;
+	g_options.err = 0;
+	g_options.lines = 0;
 }
 
 void	ft_init_width(t_width *w)
