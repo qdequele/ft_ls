@@ -81,3 +81,13 @@ int		reject_dot_folder(t_list *node)
 		return (0);
 	return (1);
 }
+
+int		reject_dot(t_list *node)
+{
+	t_elem	*elem;
+
+	elem = node->content;
+	if (ft_strcmp(elem->name, ".") == 0 || ft_strcmp(elem->name, "..") == 0)
+		return (0);
+	return (1);
+}

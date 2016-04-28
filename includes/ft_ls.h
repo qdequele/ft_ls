@@ -96,6 +96,7 @@ void				ft_compute(const void *env, t_list *lst);
 void				ft_compute_dir(const void *ev, t_list *node);
 void				ft_select_sort(t_env *env, t_list **node);
 void				ft_show_files(t_list *node);
+t_width 			*ft_get_width_list(t_list *node);
 /*
 ** ft_debug.c
 */
@@ -173,4 +174,5 @@ char				*ft_errno(char *str);
 t_elem				*ft_create_elem(char *str, char *prev_path);
 //void				ft_free_elem(void *content, size_t size);
 int					reject_dot_folder(t_list *node);
+int					reject_dot(t_list *node);
 #endif

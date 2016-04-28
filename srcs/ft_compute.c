@@ -26,7 +26,10 @@ void	ft_compute(const void *ev, t_list *node)
 	else
 	{
 		if (!elem->err || ft_strlen(elem->err) != 0)
-			ft_show_name(node);
+			if (g_options.l)
+				ft_show_detailled_name(ft_get_width_list(node), node);
+			else
+				ft_show_name(node);
 		else
 			ft_show_files(node);
 	}
@@ -60,7 +63,12 @@ void	ft_compute_dir(const void *ev, t_list *node)
 			ft_select_sort((t_env *)ev, &sub_lst);
 			ft_show_files(sub_lst);
 			if (g_options.R)
-				ft_lstiter_if_plus(sub_lst, ev, ft_compute_dir, reject_dot_folder);
+			{
+				if (g_options.a)
+					ft_lstiter_if_plus(sub_lst, ev, ft_compute_dir, reject_dot);
+				else
+					ft_lstiter_if_plus(sub_lst, ev, ft_compute_dir, reject_dot_folder);
+			}
 		}
 		
 	}
@@ -96,9 +104,7 @@ void	ft_show_files(t_list *node)
 {
 	t_width	*w;
 
-	w = (t_width *)ft_memalloc(sizeof(t_width));
-	ft_init_width(w);
-	ft_iter_plus(node, (void const *)w, ft_get_max_width);
+	w = ft_get_width_list(node);
 	if (!g_options.l)
 		ft_iter(node, ft_show_name);
 	else
@@ -108,4 +114,14 @@ void	ft_show_files(t_list *node)
 		ft_putchar('\n');
 		ft_iter_plus(node, (void const *)w, ft_show_detailled_name);
 	}
+}
+
+t_width	*ft_get_width_list(t_list *node)
+{
+	t_width	*w;
+
+	w = (t_width *)ft_memalloc(sizeof(t_width));
+	ft_init_width(w);
+	ft_iter_plus(node, (void const *)w, ft_get_max_width);
+	return (w);
 }
