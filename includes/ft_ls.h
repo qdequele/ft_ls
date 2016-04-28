@@ -22,10 +22,6 @@
 # include <time.h>
 # include <errno.h>
 
-
-
-#include <stdio.h>
-
 typedef struct		s_elem
 {
 	struct stat		stat;
@@ -71,7 +67,6 @@ typedef struct		s_env
 	int				first;
 	int				has_files;
 }					t_env;
-
 
 /*
 ** ft_get_max.c

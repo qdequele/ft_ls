@@ -67,13 +67,6 @@ int		ft_sort_by_modification_time(t_list *node)
 	n_elem = node->next->content;
 	if (!elem || !n_elem)
 		return (0);
-	if (!g_options.R)
-	{
-		if (elem->type != 'd' && n_elem->type == 'd')
-			return (0);
-		if (elem->type == 'd' && n_elem->type != 'd')
-			return (1);
-	}
 	return (ft_get_max_time(elem, n_elem));
 }
 
