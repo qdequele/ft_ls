@@ -22,6 +22,8 @@
 # include <time.h>
 # include <errno.h>
 
+
+#include <stdio.h>
 typedef struct		s_elem
 {
 	struct stat		stat;

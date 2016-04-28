@@ -42,7 +42,7 @@ void	ft_show_files(t_list *node)
 	w = ft_get_width_list(node);
 	if (!g_options.l)
 		ft_iter(node, ft_show_name);
-	else
+	else if (w->total != 0)
 	{
 		ft_putstr("total ");
 		ft_putnbr(w->total);

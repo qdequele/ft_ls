@@ -64,7 +64,7 @@ void		ft_compute_dir(const void *ev, t_list *node)
 	t_elem			*elem;
 
 	elem = node->content;
-	if (elem->type == 'd' || elem->type == 'l')
+	if (elem->type == 'd')
 	{
 		sub_lst = NULL;
 		ft_show_path((t_env *)ev, elem);
@@ -88,11 +88,8 @@ void		ft_compute(const void *ev, t_list *node)
 
 	ft_select_sort((t_env *)ev, &node);
 	elem = node->content;
-	if (elem->type == 'd' || elem->type == 'l')
-	{
-		((t_env *)ev)->first++;
+	if (elem->type == 'd')
 		ft_compute_dir(ev, node);
-	}
 	else
 	{
 		if (!elem->err || ft_strlen(elem->err) != 0)

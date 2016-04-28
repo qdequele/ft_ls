@@ -33,8 +33,8 @@ void	ft_show_path(t_env *env, t_elem *elem)
 	{
 		ft_putstr("\n");
 	}
-	if (g_options.args > 1 && env->has_files == 0)
-		env->first++;
+	// if (g_options.args > 1 && env->has_files == 0)
+	// 	env->first++;
 	if ((ft_strcmp(elem->path, ".") && g_options.R && g_options.args == 0))
 	{
 		ft_print("./", 'p');
