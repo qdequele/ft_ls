@@ -12,7 +12,6 @@
 
 #include "ft_ls.h"
 
-
 void	ft_get_max_nlink(t_width *w, struct stat stat)
 {
 	if ((size_t)ft_nbrlen((int)stat.st_nlink) > w->nlink)
@@ -41,20 +40,4 @@ void	ft_get_max_minor(t_width *w, struct stat stat)
 {
 	if ((size_t)ft_nbrlen(minor((int)stat.st_rdev)) > w->minor)
 		w->minor = ft_nbrlen(minor((int)stat.st_rdev));
-}
-
-void	ft_get_max_size(t_width *w, struct stat stat)
-{
-	if ((size_t)ft_nbrlen((int)stat.st_size) > w->size)
-		w->size = ft_nbrlen((int)stat.st_size);
-}
-
-void	ft_get_max_sm(t_width *w, struct stat stat)
-{
-	if ((size_t)ft_nbrlen((int)stat.st_size) > w->sm)
-		w->sm = ft_nbrlen((int)stat.st_size);
-	if ((size_t)ft_nbrlen(major((int)stat.st_rdev)) +
-		(size_t)ft_nbrlen(major((int)stat.st_rdev)) + 2 > w->sm)
-		w->sm = (size_t)ft_nbrlen(major((int)stat.st_rdev)) +
-				(size_t)ft_nbrlen(major((int)stat.st_rdev)) + 2;
 }

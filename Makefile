@@ -13,11 +13,12 @@
 #Define the program
 NAME		= ft_ls
 _SRC		= 	ft_get/ft_get_max.c\
+				ft_get/ft_get_max_2.c\
 				ft_get/ft_get_info.c\
+				ft_get/ft_get_time.c\
 				ft_show/ft_print.c\
 				ft_show/ft_show.c\
 				ft_show/ft_show_long.c\
-				ft_show/ft_debug.c\
 				ft_show/ft_exit.c\
 				ft_align.c\
 				ft_compute.c\
@@ -26,7 +27,8 @@ _SRC		= 	ft_get/ft_get_max.c\
 				ft_ls.c\
 				ft_parser.c\
 				ft_sort.c\
-				ft_utils.c
+				ft_utils.c\
+				ft_utils_2.c
 SRC			= $(addprefix srcs/,$(_SRC))
 CFLAGS		= -Wall -Wextra -Werror -g -ggdb
 LIBFT		= -Llibft -lft -Ilibft

@@ -22,7 +22,8 @@ void	ft_show_detailled_name(void const *wc, t_list *node)
 	ft_print_c(elem->type, elem->type);
 	ft_print(ft_get_right(elem->stat.st_mode), elem->type);
 	ft_print("  ", elem->type);
-	ft_print(ft_float_right_text(w->nlink, ft_itoa((int)elem->stat.st_nlink)), elem->type);
+	ft_print(ft_float_right_text(w->nlink, ft_itoa((int)elem->stat.st_nlink)),
+		elem->type);
 	ft_print(" ", elem->type);
 	ft_show_uid_gid(w, elem);
 	ft_print("  ", elem->type);
@@ -34,7 +35,7 @@ void	ft_show_detailled_name(void const *wc, t_list *node)
 	ft_print("\n", elem->type);
 }
 
-void	ft_show_uid_gid(t_width *w, t_elem	*elem)
+void	ft_show_uid_gid(t_width *w, t_elem *elem)
 {
 	char	*user;
 	char	*group;
@@ -50,7 +51,7 @@ void	ft_show_uid_gid(t_width *w, t_elem	*elem)
 	ft_print(ft_float_left_text(w->gid, group), elem->type);
 }
 
-void	ft_show_size(t_width *w, t_elem	*elem)
+void	ft_show_size(t_width *w, t_elem *elem)
 {
 	char	*size;
 	char	*major;
@@ -61,7 +62,8 @@ void	ft_show_size(t_width *w, t_elem	*elem)
 		major = ft_itoa(major((int)elem->stat.st_rdev));
 		minor = ft_itoa(minor((int)elem->stat.st_rdev));
 		if (w->size_format && w->mm_format)
-			ft_print(ft_float_right_text((w->sm - w->minor), major), elem->type);
+			ft_print(ft_float_right_text((w->sm - w->minor), major),
+				elem->type);
 		else
 			ft_print(ft_float_right_text(w->major, major), elem->type);
 		ft_print(", ", elem->type);
@@ -77,7 +79,7 @@ void	ft_show_size(t_width *w, t_elem	*elem)
 	}
 }
 
-void	ft_show_date(t_elem	*elem)
+void	ft_show_date(t_elem *elem)
 {
 	char	*time;
 

@@ -36,12 +36,12 @@ char	*ft_errno(char *str)
 {
 	char	*err;
 
-	err = ft_memalloc(sizeof(char) * (ft_strlen(str) + ft_strlen(strerror(errno))));
+	err = ft_memalloc(sizeof(char)
+		* (ft_strlen(str) + ft_strlen(strerror(errno))));
 	ft_strcat(err, "ls: ");
 	ft_strcat(err, ft_strdup(str));
 	ft_strcat(err, ": ");
 	ft_strcat(err, ft_strdup(strerror(errno)));
-	g_options.err++;
 	return (err);
 }
 
@@ -50,7 +50,8 @@ t_elem	*ft_create_elem(char *str, char *prev_path)
 	t_elem	*new_elem;
 
 	new_elem = ft_memalloc(sizeof(t_elem));
-	new_elem->path = ft_memalloc(sizeof(char) * (ft_strlen(str) + ft_strlen(prev_path) + 1));
+	new_elem->path = ft_memalloc(sizeof(char)
+		* (ft_strlen(str) + ft_strlen(prev_path) + 1));
 	if (ft_strcmp(prev_path, ".") == 0)
 		new_elem->path = ft_strdup(str);
 	else
@@ -61,10 +62,7 @@ t_elem	*ft_create_elem(char *str, char *prev_path)
 	}
 	new_elem->name = ft_strdup(str);
 	if (lstat(new_elem->path, &new_elem->stat) == -1)
-	{
-		//new_elem->err = ft_errno(str);
 		ft_not_found_exit(str);
-	}
 	else
 		new_elem->type = ft_get_type_of(new_elem->stat);
 	if (g_options.l && new_elem->type == 'l')

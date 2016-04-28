@@ -60,7 +60,6 @@ typedef struct		s_opt
 	int				h;
 	int				one;
 	int				args;
-	int				err;
 	int				lines;
 }					t_opt;
 
@@ -84,6 +83,20 @@ void				ft_get_max_major(t_width *w, struct stat stat);
 void				ft_get_max_minor(t_width *w, struct stat stat);
 void				ft_get_max_size(t_width *w, struct stat stat);
 void				ft_get_max_sm(t_width *w, struct stat stat);
+void				ft_get_max_width(void const *st, t_list *node);
+/*
+** ft_get_info.c
+*/
+char				*ft_get_user(uid_t uid);
+char				*ft_get_group(gid_t gid);
+char				*ft_get_right(mode_t st_mode);
+char				*ft_get_linked_name(t_elem *elem);
+void				ft_concat_linked_name(t_elem *elem);
+/*
+** ft_get_time.c
+*/
+char				*ft_get_time(time_t timestamp);
+int					ft_get_max_time(t_elem *elem, t_elem *n_elem);
 /*
 ** ft_align.c
 */
@@ -94,14 +107,7 @@ char				*ft_float_left_text(int width, char *str);
 */
 void				ft_compute(const void *env, t_list *lst);
 void				ft_compute_dir(const void *ev, t_list *node);
-void				ft_select_sort(t_env *env, t_list **node);
-void				ft_show_files(t_list *node);
-t_width 			*ft_get_width_list(t_list *node);
-/*
-** ft_debug.c
-*/
-void				ft_debug_t_opt(t_opt opt);
-void				ft_debug_elems(t_list *node);
+
 /*
 ** ft_exit.c
 */
@@ -110,16 +116,6 @@ void				ft_nill_not_found_exit();
 void				ft_illegal_option_exit(char c);
 void				ft_memory_error();
 void				ft_show_help();
-/*
-** ft_get_info.c
-*/
-char				*ft_get_user(uid_t uid);
-char				*ft_get_group(gid_t gid);
-char				*ft_get_time(time_t timestamp);
-char				*ft_get_right(mode_t st_mode);
-void				ft_get_max_width(void const *st, t_list *node);
-char				*ft_get_linked_name(t_elem *elem);
-void				ft_concat_linked_name(t_elem *elem);
 /*
 ** ft_init.c
 */
@@ -173,7 +169,9 @@ int					ft_sort_reverse(t_list **node);
 char				ft_get_type_of(struct stat stat);
 char				*ft_errno(char *str);
 t_elem				*ft_create_elem(char *str, char *prev_path);
-//void				ft_free_elem(void *content, size_t size);
 int					reject_dot_folder(t_list *node);
 int					reject_dot(t_list *node);
+void				ft_select_sort(t_env *env, t_list **node);
+void				ft_show_files(t_list *node);
+t_width 			*ft_get_width_list(t_list *node);
 #endif

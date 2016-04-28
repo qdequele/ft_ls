@@ -31,12 +31,16 @@ int		ft_sort_by_lexycography_folder_end(t_list *node)
 
 	elem = node->content;
 	n_elem = node->next->content;
-	if (n_elem && (elem->type != 'd' && n_elem->type == 'd'))
+	if (!elem || !n_elem)
 		return (0);
-	if (n_elem && ((ft_strcmp(elem->name, n_elem->name) > 0) || (elem->type == 'd' && n_elem->type != 'd')))
+	if (elem->type != 'd' && n_elem->type == 'd')
+		return (0);
+	if ((ft_strcmp(elem->name, n_elem->name) > 0)
+		|| (elem->type == 'd' && n_elem->type != 'd'))
 		return (1);
 	return (0);
 }
+
 int		ft_sort_by_lexycography_folder_end_r(t_list *node)
 {
 	t_elem	*elem;
@@ -44,13 +48,16 @@ int		ft_sort_by_lexycography_folder_end_r(t_list *node)
 
 	elem = node->content;
 	n_elem = node->next->content;
-	if (n_elem && (elem->type != 'd' && n_elem->type == 'd'))
+	if (!elem || !n_elem)
 		return (0);
-	if (n_elem && ((ft_strcmp(elem->name, n_elem->name) < 0) || (elem->type == 'd' && n_elem->type != 'd')))
+	if (elem->type != 'd' && n_elem->type == 'd')
+		return (0);
+	if ((ft_strcmp(elem->name, n_elem->name) < 0)
+		|| (elem->type == 'd' && n_elem->type != 'd'))
 		return (1);
 	return (0);
 }
-//-t
+
 int		ft_sort_by_modification_time(t_list *node)
 {
 	t_elem	*elem;
@@ -58,29 +65,18 @@ int		ft_sort_by_modification_time(t_list *node)
 
 	elem = node->content;
 	n_elem = node->next->content;
+	if (!elem || !n_elem)
+		return (0);
 	if (!g_options.R)
 	{
-		if (n_elem && (elem->type != 'd' && n_elem->type == 'd'))
+		if (elem->type != 'd' && n_elem->type == 'd')
 			return (0);
-		if (n_elem && (elem->type == 'd' && n_elem->type != 'd'))
+		if (elem->type == 'd' && n_elem->type != 'd')
 			return (1);
 	}
-	if (n_elem && elem->stat.st_mtime == n_elem->stat.st_mtime)
-	{
-		if (elem->stat.st_mtimespec.tv_nsec == n_elem->stat.st_mtimespec.tv_nsec 
-			&& ft_strcmp(elem->name, n_elem->name) > 0)
-			return (1);
-		else if (elem->stat.st_mtimespec.tv_nsec < n_elem->stat.st_mtimespec.tv_nsec)
-			return (1);
-		else
-			return (0);
-	}
-	else if (n_elem && elem->stat.st_mtime < n_elem->stat.st_mtime)
-		return (1);
-	else
-		return (0);
+	return (ft_get_max_time(elem, n_elem));
 }
-//-r
+
 int		ft_sort_reverse(t_list **node)
 {
 	*node = ft_lst_reverse(*node);

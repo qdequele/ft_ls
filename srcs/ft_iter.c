@@ -20,7 +20,8 @@ void	ft_iter(t_list *node, void (*f)(t_list *elem))
 		ft_lstiter_if(node, f, reject_dot_folder);
 }
 
-void	ft_iter_plus(t_list *node, void const *param, void (*f)(void const *info, t_list *elem))
+void	ft_iter_plus(t_list *node, void const *param,
+	void (*f)(void const *info, t_list *elem))
 {
 	if (g_options.a)
 		ft_lstiter_plus(node, param, f);

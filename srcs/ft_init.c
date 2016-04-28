@@ -25,7 +25,6 @@ void	ft_init_opt(t_env *env)
 	g_options.args = 0;
 	env->first = 0;
 	env->has_files = 0;
-	g_options.err = 0;
 	g_options.lines = 0;
 }
 

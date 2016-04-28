@@ -24,28 +24,28 @@ void	ft_not_found_exit(char *str)
 	ft_putchar('\n');
 }
 
-void	ft_nill_not_found_exit()
+void	ft_nill_not_found_exit(void)
 {
 	ft_putstr("ls: fts_open: No such file or directory\n");
 	exit(0);
 }
 
-
 void	ft_illegal_option_exit(char c)
 {
 	ft_putstr_fd("ls: illegal option -- ", 2);
 	ft_putchar_fd(c, 2);
-	ft_putstr_fd("\nusage: ls [-ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1] [file ...]\n", 2);
+	ft_putstr_fd("\nusage: ls [-ABCFGHLOPRSTUWabcd", 2);
+	ft_putstr_fd("efghiklmnopqrstuwx1] [file ...]\n", 2);
 	exit(0);
 }
 
-void	ft_memory_error()
+void	ft_memory_error(void)
 {
 	ft_putstr("error : memory cannot be allocated\n");
 	exit(0);
 }
 
-void	ft_show_help()
+void	ft_show_help(void)
 {
 	ft_putendl("-R  -- list subdirectories recursively");
 	ft_putendl("-a  -- list entries starting with .");
