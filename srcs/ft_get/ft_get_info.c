@@ -102,7 +102,7 @@ void	ft_get_max_width(void const *st, t_list *node)
 
 }
 
-void	ft_get_linked_name(t_elem *elem)
+char	*ft_get_linked_name(t_elem *elem)
 {
 	char	*linkname;
 	ssize_t	size;
@@ -111,6 +111,17 @@ void	ft_get_linked_name(t_elem *elem)
 	size = readlink(elem->path, linkname, 256);
 	linkname[size] = '\0';
 	if (size > 0)
+		return (linkname);
+	else
+		return (NULL);
+}
+
+void	ft_concat_linked_name(t_elem *elem)
+{
+	char	*linkname;
+
+	linkname = ft_get_linked_name(elem);
+	if (linkname)
 	{
 		elem->name = ft_strfjoin(elem->name, ft_strdup(" -> "));
 		elem->name = ft_strfjoin(elem->name, linkname);

@@ -118,7 +118,8 @@ char				*ft_get_group(gid_t gid);
 char				*ft_get_time(time_t timestamp);
 char				*ft_get_right(mode_t st_mode);
 void				ft_get_max_width(void const *st, t_list *node);
-void				ft_get_linked_name(t_elem *elem);
+char				*ft_get_linked_name(t_elem *elem);
+void				ft_concat_linked_name(t_elem *elem);
 /*
 ** ft_init.c
 */

@@ -18,7 +18,7 @@ void	ft_compute(const void *ev, t_list *node)
 
 	ft_select_sort((t_env *)ev, &node);
 	elem = node->content;
-	if (elem->type == 'd')
+	if (elem->type == 'd' || elem->type == 'l')
 	{
 		((t_env *)ev)->first++;
 		ft_compute_dir(ev, node);
@@ -43,15 +43,29 @@ void	ft_compute_dir(const void *ev, t_list *node)
 	t_elem			*elem;
 
 	elem = node->content;
-	if (elem->type == 'd')
+	if (elem->type == 'd' || elem->type == 'l')
 	{
 		sub_lst = NULL;
 		pDir = NULL;
 		ft_show_path((t_env *)ev, elem);
-		if ((pDir = opendir (elem->path)) == NULL)
+		if (elem->type == 'l')
 		{
-			ft_not_found_exit(elem->path);
-			return ;
+			if ((pDir = opendir (ft_get_linked_name(elem))) == NULL)
+			{
+				if (g_options.l)
+					ft_show_detailled_name(ft_get_width_list(node), node);
+				else
+					ft_show_name(node);
+				return ;
+			}
+		}
+		else
+		{
+			if ((pDir = opendir (elem->path)) == NULL)
+			{
+				ft_not_found_exit(elem->path);
+				return ;
+			}
 		}
 		if (pDir)
 		{

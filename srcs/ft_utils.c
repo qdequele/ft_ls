@@ -68,7 +68,7 @@ t_elem	*ft_create_elem(char *str, char *prev_path)
 	else
 		new_elem->type = ft_get_type_of(new_elem->stat);
 	if (g_options.l && new_elem->type == 'l')
-		ft_get_linked_name(new_elem);
+		ft_concat_linked_name(new_elem);
 	return (new_elem);
 }
 
