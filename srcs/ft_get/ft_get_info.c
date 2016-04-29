@@ -17,7 +17,7 @@ char	*ft_get_user(uid_t uid)
 	struct passwd *result;
 
 	result = getpwuid(uid);
-	if (result && result->pw_name)
+	if (result && result->pw_name && !g_options.n)
 		return (result->pw_name);
 	else
 		return (ft_itoa(uid));
@@ -28,7 +28,7 @@ char	*ft_get_group(gid_t gid)
 	struct group *result;
 
 	result = getgrgid(gid);
-	if (result && result->gr_name)
+	if (result && result->gr_name && !g_options.n)
 		return (result->gr_name);
 	else
 		return (ft_itoa(gid));

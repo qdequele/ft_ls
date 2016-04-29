@@ -12,23 +12,26 @@
 
 #include "ft_ls.h"
 
-static void	ft_parse_option(t_env *env, char c)
+static void	ft_parse_option(char c)
 {
-	env = (t_env *)env;
 	if (c == 'l')
 		g_options.l = 1;
 	else if (c == 'R')
 		g_options.r_maj = 1;
+	else if (c == 'i')
+		g_options.i = 1;
 	else if (c == 'a')
 		g_options.a = 1;
 	else if (c == 'r')
-		g_options.r_maj = 1;
+		g_options.r = 1;
 	else if (c == 't')
 		g_options.t = 1;
 	else if (c == 'c')
 		g_options.c = 1;
 	else if (c == 'h')
 		g_options.h = 1;
+	else if (c == 'n')
+		g_options.n = 1;
 	else if (c == '1')
 	{
 		g_options.one = 1;
@@ -38,7 +41,7 @@ static void	ft_parse_option(t_env *env, char c)
 		ft_illegal_option_exit(c);
 }
 
-static void	ft_parse_options(t_env *env, char *str)
+static void	ft_parse_options(char *str)
 {
 	int		lenght;
 	int		i;
@@ -47,7 +50,7 @@ static void	ft_parse_options(t_env *env, char *str)
 	i = 1;
 	while (i < lenght && str[i])
 	{
-		ft_parse_option(env, str[i]);
+		ft_parse_option(str[i]);
 		i++;
 	}
 }
@@ -62,7 +65,7 @@ static void	ft_parse_elems(t_env *env, char *str)
 	ft_lstaddend(&(env->lst), ft_lstnew(new_elem, sizeof(t_elem)));
 }
 
-static int	ft_find_options(t_env *env, int ac, char **av)
+static int	ft_find_options(int ac, char **av)
 {
 	int		i;
 
@@ -79,7 +82,7 @@ static int	ft_find_options(t_env *env, int ac, char **av)
 		else if (av[i][0] == '-' && av[i][1] == '-' && av[i][2])
 			ft_illegal_option_exit('-');
 		else if (av[i][0] == '-' && av[i][1])
-			ft_parse_options(env, av[i]);
+			ft_parse_options(av[i]);
 	}
 	return (i);
 }
@@ -90,7 +93,7 @@ void		ft_parser(t_env *env, int ac, char **av)
 	int		j;
 
 	ft_init_opt(env);
-	i = ft_find_options(env, ac, av);
+	i = ft_find_options(ac, av);
 	j = i;
 	while (j < ac && av[j])
 	{

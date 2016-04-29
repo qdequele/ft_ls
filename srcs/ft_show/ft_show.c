@@ -14,7 +14,7 @@
 
 void	ft_show_name(t_list *node)
 {
-	t_elem *elem;
+	t_elem	*elem;
 
 	elem = node->content;
 	if (elem->err)
@@ -23,6 +23,7 @@ void	ft_show_name(t_list *node)
 	}
 	else if (elem->name && elem->type)
 	{
+		ft_show_inode(elem);
 		ft_printendl(elem->name, elem->type);
 	}
 }
@@ -62,5 +63,14 @@ void	ft_show_files(t_list *node)
 		ft_putnbr(w->total);
 		ft_putchar('\n');
 		ft_iter_plus(node, (void const *)w, ft_show_detailled_name);
+	}
+}
+
+void	ft_show_inode(t_elem *elem)
+{
+	if (g_options.i)
+	{
+		ft_putstr(ft_itoa(elem->stat.st_ino));
+		ft_putstr(" ");
 	}
 }

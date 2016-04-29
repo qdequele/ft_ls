@@ -23,6 +23,7 @@ void	ft_show_detailled_name(void const *wc, t_list *node)
 		return ;
 	else
 	{
+		ft_show_inode(elem);
 		ft_print_c(elem->type, elem->type);
 		ft_print(ft_get_right(elem->stat.st_mode), elem->type);
 		ft_print("  ", elem->type);

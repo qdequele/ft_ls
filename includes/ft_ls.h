@@ -50,10 +50,12 @@ typedef struct		s_opt
 	int				l;
 	int				r_maj;
 	int				a;
+	int				i;
 	int				r;
 	int				t;
 	int				c;
 	int				h;
+	int				n;
 	int				one;
 	int				args;
 	int				lines;
@@ -141,6 +143,7 @@ void				ft_print_c(char c, char type);
 */
 void				ft_show_name(t_list *node);
 void				ft_show_path(t_env *env, t_elem *elem);
+void				ft_show_inode(t_elem *elem);
 /*
 ** ft_show_long.c
 */

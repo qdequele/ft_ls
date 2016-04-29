@@ -17,10 +17,12 @@ void	ft_init_opt(t_env *env)
 	g_options.l = 0;
 	g_options.r_maj = 0;
 	g_options.a = 0;
-	g_options.r_maj = 0;
+	g_options.i = 0;
+	g_options.r = 0;
 	g_options.t = 0;
 	g_options.c = 0;
 	g_options.h = 0;
+	g_options.n = 0;
 	g_options.one = 0;
 	g_options.args = 0;
 	env->first = 0;

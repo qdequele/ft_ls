@@ -49,10 +49,12 @@ void	ft_show_help(void)
 {
 	ft_putendl("-R  -- list subdirectories recursively");
 	ft_putendl("-a  -- list entries starting with .");
-	ft_putendl("-c  -- add colors to output");
-	ft_putendl("-h  -- print information about command");
 	ft_putendl("-l  -- long listing");
 	ft_putendl("-r  -- reverse sort order");
 	ft_putendl("-t  -- sort by modification time");
+	ft_putendl("-c  -- add colors to output");
+	ft_putendl("-i  -- show inode number");
+	ft_putendl("-n  -- show uid and gid");
+	ft_putendl("-h  -- print information about command");
 	exit(0);
 }
