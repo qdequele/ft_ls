@@ -29,7 +29,7 @@ typedef struct		s_elem
 	struct stat		stat;
 	char			*name;
 	char			*path;
-	char			*err;
+	int				err;
 	char			type;
 }					t_elem;
 
@@ -131,9 +131,6 @@ void				ft_ls(int ac, char **av);
 ** ft_parser.c
 */
 void				ft_parser(t_env *env, int ac, char **av);
-void				ft_parse_options(t_env *env, char *str);
-void				ft_parse_option(t_env *env, char c);
-void				ft_parse_elems(t_env *env, char *str);
 /*
 ** ft_print.c
 */

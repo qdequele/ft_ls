@@ -17,7 +17,10 @@ char	*ft_get_user(uid_t uid)
 	struct passwd *result;
 
 	result = getpwuid(uid);
-	return (result->pw_name);
+	if (result && result->pw_name)
+		return (result->pw_name);
+	else
+		return (ft_itoa(uid));
 }
 
 char	*ft_get_group(gid_t gid)
@@ -25,7 +28,10 @@ char	*ft_get_group(gid_t gid)
 	struct group *result;
 
 	result = getgrgid(gid);
-	return (result->gr_name);
+	if (result && result->gr_name)
+		return (result->gr_name);
+	else
+		return (ft_itoa(gid));
 }
 
 char	*ft_get_right(mode_t st_mode)

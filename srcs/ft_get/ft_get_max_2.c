@@ -48,3 +48,13 @@ void	ft_get_max_width(void const *st, t_list *node)
 	ft_get_max_size(w, elem->stat);
 	ft_get_max_sm(w, elem->stat);
 }
+
+t_width	*ft_get_width_list(t_list *node)
+{
+	t_width	*w;
+
+	w = (t_width *)ft_memalloc(sizeof(t_width));
+	ft_init_width(w);
+	ft_iter_plus(node, (void const *)w, ft_get_max_width);
+	return (w);
+}

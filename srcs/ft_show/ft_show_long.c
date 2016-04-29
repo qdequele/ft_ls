@@ -20,7 +20,7 @@ void	ft_show_detailled_name(void const *wc, t_list *node)
 	w = (t_width *)wc;
 	elem = node->content;
 	if (elem->err)
-		ft_printendl(elem->err, 'e');
+		return ;
 	else
 	{
 		ft_print_c(elem->type, elem->type);

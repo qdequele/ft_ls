@@ -32,19 +32,6 @@ char	ft_get_type_of(struct stat stat)
 		return ('e');
 }
 
-char	*ft_errno(char *str)
-{
-	char	*err;
-
-	err = ft_memalloc(sizeof(char)
-		* (ft_strlen(str) + ft_strlen(strerror(errno))));
-	ft_strcat(err, "ls: ");
-	ft_strcat(err, ft_strdup(str));
-	ft_strcat(err, ": ");
-	ft_strcat(err, ft_strdup(strerror(errno)));
-	return (err);
-}
-
 t_elem	*ft_create_elem(char *str, char *prev_path)
 {
 	t_elem	*new_elem;
@@ -61,8 +48,12 @@ t_elem	*ft_create_elem(char *str, char *prev_path)
 		new_elem->path = ft_strfjoin(ft_strdup(prev_path), ft_strdup(str));
 	}
 	new_elem->name = ft_strdup(str);
+	new_elem->err = 0;
 	if (lstat(new_elem->path, &new_elem->stat) == -1)
+	{
+		new_elem->err = 1;
 		ft_not_found_exit(str);
+	}
 	else
 		new_elem->type = ft_get_type_of(new_elem->stat);
 	if (g_options.l && new_elem->type == 'l')
@@ -70,22 +61,14 @@ t_elem	*ft_create_elem(char *str, char *prev_path)
 	return (new_elem);
 }
 
-int		reject_dot_folder(t_list *node)
+void	ft_select_sort(t_env *env, t_list **node)
 {
-	t_elem	*elem;
-
-	elem = node->content;
-	if (ft_strncmp(elem->name, ".", 1) == 0)
-		return (0);
-	return (1);
-}
-
-int		reject_dot(t_list *node)
-{
-	t_elem	*elem;
-
-	elem = node->content;
-	if (ft_strcmp(elem->name, ".") == 0 || ft_strcmp(elem->name, "..") == 0)
-		return (0);
-	return (1);
+	if (g_options.t)
+		ft_lst_bubble_sort(*node, ft_sort_by_modification_time);
+	else if (env->has_files != 0 && env->first == 0)
+		ft_lst_bubble_sort(*node, ft_sort_by_lexycography_folder_end);
+	else
+		ft_lst_bubble_sort(*node, ft_sort_by_lexycography);
+	if (g_options.r)
+		ft_sort_reverse(node);
 }

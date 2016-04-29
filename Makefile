@@ -20,15 +20,16 @@ _SRC		= 	ft_get/ft_get_max.c\
 				ft_show/ft_show.c\
 				ft_show/ft_show_long.c\
 				ft_show/ft_exit.c\
-				ft_align.c\
+				ft_utils/ft_align.c\
+				ft_utils/ft_parser.c\
+				ft_utils/ft_reject_dot.c\
+				ft_utils/ft_sort.c\
+				ft_utils/ft_utils.c\
+				ft_utils/ft_init.c\
+				ft_utils/ft_iter.c\
 				ft_compute.c\
-				ft_init.c\
-				ft_iter.c\
-				ft_ls.c\
-				ft_parser.c\
-				ft_sort.c\
-				ft_utils.c\
-				ft_utils_2.c
+				ft_ls.c
+				
 SRC			= $(addprefix srcs/,$(_SRC))
 CFLAGS		= -Wall -Wextra -Werror
 LIBFT		= -Llibft -lft -Ilibft

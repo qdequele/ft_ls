@@ -92,12 +92,9 @@ void		ft_compute(const void *ev, t_list *node)
 		ft_compute_dir(ev, node);
 	else
 	{
-		if (!elem->err || ft_strlen(elem->err) != 0)
-			if (g_options.l)
-				ft_show_detailled_name(ft_get_width_list(node), node);
-			else
-				ft_show_name(node);
+		if (g_options.l)
+			ft_show_detailled_name(ft_get_width_list(node), node);
 		else
-			ft_show_files(node);
+			ft_show_name(node);
 	}
 }
