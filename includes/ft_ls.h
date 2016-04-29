@@ -22,8 +22,6 @@
 # include <time.h>
 # include <errno.h>
 
-
-#include <stdio.h>
 typedef struct		s_elem
 {
 	struct stat		stat;
@@ -50,7 +48,7 @@ typedef struct		s_width
 typedef struct		s_opt
 {
 	int				l;
-	int				R;
+	int				r_maj;
 	int				a;
 	int				r;
 	int				t;
@@ -122,7 +120,8 @@ void				ft_init_width(t_width *w);
 ** ft_iter.c
 */
 void				ft_iter(t_list *node, void (*f)(t_list *elem));
-void				ft_iter_plus(t_list *node, void const *param, void (*f)(void const *info, t_list *elem));
+void				ft_iter_plus(t_list *node, void const *param,
+	void (*f)(void const *info, t_list *elem));
 /*
 ** ft_ls.c
 */
@@ -167,5 +166,5 @@ int					reject_dot_folder(t_list *node);
 int					reject_dot(t_list *node);
 void				ft_select_sort(t_env *env, t_list **node);
 void				ft_show_files(t_list *node);
-t_width 			*ft_get_width_list(t_list *node);
+t_width				*ft_get_width_list(t_list *node);
 #endif

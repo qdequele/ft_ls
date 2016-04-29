@@ -19,7 +19,6 @@ void	ft_show_name(t_list *node)
 	elem = node->content;
 	if (elem->err)
 	{
-		// ft_printendl(elem->err, 'e');
 		return ;
 	}
 	else if (elem->name && elem->type)
@@ -36,7 +35,7 @@ void	ft_show_path(t_env *env, t_elem *elem)
 	}
 	if (g_options.args > 1 && env->has_files == 0)
 		env->first++;
-	if ((ft_strcmp(elem->path, ".") && g_options.R && g_options.args == 0))
+	if ((ft_strcmp(elem->path, ".") && g_options.r_maj && g_options.args == 0))
 	{
 		ft_print("./", 'p');
 		ft_print(elem->path, 'p');

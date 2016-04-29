@@ -14,7 +14,7 @@
 
 static void	ft_compute_dir_option_r(t_list *sub_lst, const void *ev)
 {
-	if (g_options.R)
+	if (g_options.r_maj)
 	{
 		if (g_options.a)
 			ft_lstiter_if_plus(sub_lst, ev, ft_compute_dir, reject_dot);

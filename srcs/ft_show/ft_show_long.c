@@ -26,8 +26,8 @@ void	ft_show_detailled_name(void const *wc, t_list *node)
 		ft_print_c(elem->type, elem->type);
 		ft_print(ft_get_right(elem->stat.st_mode), elem->type);
 		ft_print("  ", elem->type);
-		ft_print(ft_float_right_text(w->nlink, ft_itoa((int)elem->stat.st_nlink)),
-			elem->type);
+		ft_print(ft_float_right_text(w->nlink,
+			ft_itoa((int)elem->stat.st_nlink)), elem->type);
 		ft_print(" ", elem->type);
 		ft_show_uid_gid(w, elem);
 		ft_print("  ", elem->type);

@@ -18,11 +18,11 @@ static void	ft_parse_option(t_env *env, char c)
 	if (c == 'l')
 		g_options.l = 1;
 	else if (c == 'R')
-		g_options.R = 1;
+		g_options.r_maj = 1;
 	else if (c == 'a')
 		g_options.a = 1;
 	else if (c == 'r')
-		g_options.r = 1;
+		g_options.r_maj = 1;
 	else if (c == 't')
 		g_options.t = 1;
 	else if (c == 'c')
@@ -56,19 +56,16 @@ static void	ft_parse_elems(t_env *env, char *str)
 {
 	t_elem	*new_elem;
 
-	if (ft_strlen(str) == 0)
-		ft_nill_not_found_exit();
 	new_elem = ft_create_elem(str, "");
 	if (new_elem->type != 'd')
 		env->has_files++;
 	ft_lstaddend(&(env->lst), ft_lstnew(new_elem, sizeof(t_elem)));
 }
 
-void		ft_parser(t_env *env, int ac, char **av)
+static int	ft_find_options(t_env *env, int ac, char **av)
 {
 	int		i;
 
-	ft_init_opt(env);
 	i = 0;
 	while (++i < ac && av[i] && av[i][0] == '-')
 	{
@@ -83,6 +80,22 @@ void		ft_parser(t_env *env, int ac, char **av)
 			ft_illegal_option_exit('-');
 		else if (av[i][0] == '-' && av[i][1])
 			ft_parse_options(env, av[i]);
+	}
+	return (i);
+}
+
+void		ft_parser(t_env *env, int ac, char **av)
+{
+	int		i;
+	int		j;
+
+	ft_init_opt(env);
+	i = ft_find_options(env, ac, av);
+	j = i;
+	while (j < ac && av[j])
+	{
+		if (ft_strlen(av[j++]) == 0)
+			ft_nill_not_found_exit();
 	}
 	if (!av[i])
 		ft_parse_elems(env, ".");
