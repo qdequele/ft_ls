@@ -69,6 +69,6 @@ void	ft_select_sort(t_env *env, t_list **node)
 		ft_lst_bubble_sort(*node, ft_sort_by_lexycography_folder_end);
 	else
 		ft_lst_bubble_sort(*node, ft_sort_by_lexycography);
-	if (g_options.r_maj)
+	if (g_options.r)
 		ft_sort_reverse(node);
 }
